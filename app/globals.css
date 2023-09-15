@@ -24,4 +24,13 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    font-family: 'JAGUAR', sans-serif;;
+}
+
+@font-face {
+  font-family: 'JAGUAR';
+  src: url('/fonts/JAGUAR.woff2') format('woff2'),
+       url('/fonts/JAGUAR.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
