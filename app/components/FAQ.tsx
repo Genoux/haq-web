@@ -33,11 +33,11 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, index, openItems, s
       )}
     >
       <div className='flex justify-between items-center'>
-        <h3 className='text-2xl font-bold pr-12'>{question}</h3>
+        <h3 className='text-2xl font-bold pr-12 text-white'>{question}</h3>
         <span>{openItems[index] ? <ChevronUp /> : <ChevronDown />}</span>
       </div>
       {openItems[index] &&
-        <p className='text-lg mt-3 font-normal opacity-60'>{answer}</p>
+        <p className='text-lg mt-3 font-normal opacity-60 text-white'>{answer}</p>
       }
     </div>
   );

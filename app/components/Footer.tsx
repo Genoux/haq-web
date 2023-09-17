@@ -18,7 +18,7 @@ export default function Footer() {
         <div className='flex gap-4'>
           <Link href={'https://www.facebook.com/profile.php?id=100093560062096'} target="_blank"><Facebook className=' cursor-pointer transition-all hover:opacity-25 hover:scale-95' /></Link>
           <Link href={'https://www.instagram.com/tournois_haq/'} target="_blank"><Instagram className=' cursor-pointer transition-all hover:opacity-25 hover:scale-95' /></Link>
-          <Twitch className=' cursor-pointer transition-all hover:opacity-25 hover:scale-95' />
+          <Link href={'https://www.twitch.tv/tournoi_haq' } target="_blank"><Twitch className=' cursor-pointer transition-all hover:opacity-25 hover:scale-95' /></Link>
         </div>
         <div className={clsx(
           'flex flex-col items-center sm:flex-row gap-12 text-sm font-medium',
