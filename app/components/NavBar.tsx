@@ -11,7 +11,7 @@ const bai = Bai_Jamjuree({
 
 export default function NavBar() {
   return (
-    <nav className={clsx('container mx-auto py-2 flex flex-col gap-6 sm:flex-row sm:gap-0 justify-between items-center text-white font-bold text-sm uppercase', bai.className)}>
+    <nav className={clsx('z-50 relative container mx-auto py-2 flex flex-col gap-6 sm:flex-row sm:gap-0 justify-between items-center text-white font-bold text-sm uppercase', bai.className)}>
       <Image width={250} height={100} src="/logo.svg" alt="Tournois HAQ" />
       <div className="menu flex items-center space-x-6">
         <Link target='_blank' href="https://reglements.tournoishaq.ca" className="text-white">Règlements</Link>
