@@ -19,7 +19,7 @@ export default function RootLayout({
         <meta name="description" content="HAQ - Tournois ARAM League of Legend" />
         <meta property="og:title" content="Tournois HAQ" />
         <meta property="og:description" content="HAQ - Tournois ARAM League of Legend" />
-        <meta property="og:image" content="/banner.png" />
+        <meta property="og:image" content="/public/banner.png" />
       </Head>
       <body>{children}</body>
     </html>
