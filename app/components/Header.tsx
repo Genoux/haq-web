@@ -40,13 +40,15 @@ export default function Header() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col items-start justify-center w-full pt-0 mt-0 text-left container z-50 relative" >
-      <div className="flex flex-col items-start justify-center w-full pt-24 sm:pt-52 pb-32 sm:pb-64 mt-0 text-left container">
-        <div className='flex flex-col gap-0 text-8xl md:text-9xl'>
-          <h1 className="text-primary font-bold w-full ">LEAGUE OF LEGENDS</h1>
+      className="flex flex-col items-center justify-center w-full pt-0 mt-0 text-left container z-50 relative" >
+      <div className="flex flex-col items-center justify-center w-full pt-12 sm:pt-24 pb-32 sm:pb-52 mt-0 text-center container">
+        <div className='flex flex-col gap-0 text-7xl md:text-9xl'>
+          <div className='bg-primary py-2 px-12 text-5xl text-secondary mx-auto mb-8 w-fit h-full'>SAISON 1</div>
+          <h1 className="text-primary font-bold w-full lg:whitespace-nowrap">LEAGUE OF LEGENDS</h1>
           <h2 className="text-white font-bold w-full">TOURNOI ARAM</h2>
+          <p className='text-4xl md:text-5xl w-full mt-10 mb-6'>30 SEPTEMBRE - 19H EST</p>
         </div>
-        <div className="flex flex-col sm:flex-row gap-4 w-full justify-start mt-6">
+        <div className="flex flex-col sm:flex-row gap-4 w-full justify-center mt-6">
           <Button text="Inscription" url="https://inscription.tournoishaq.ca/" variant="bg-yellow" size="lg" />
           <Button text="Contacter" url="mailto:contact@tournoishaq.ca" variant="bg-white" size="lg" />
         </div>
