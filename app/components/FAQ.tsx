@@ -79,7 +79,7 @@ export default function FAQ() {
   }, [faqData]);
 
   return (
-    <div className='container w-full mx-auto pb-48 pt-24'>
+    <div className='container w-full mx-auto pb-24 pt-24'>
       <h1 className='text-9xl mb-12 mt-32'>FAQs</h1>
       <div className='grid grid-cols-1 gap-2'>
         {faqData.map((item, index) => (

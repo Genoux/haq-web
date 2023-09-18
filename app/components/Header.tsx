@@ -40,11 +40,11 @@ export default function Header() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col items-start justify-center w-full h-screen  pt-0 mt-0 text-left container z-50 relative" >
-      <div className="flex flex-col items-start justify-center w-full h-screen  pt-0 mt-0 text-left container">
+      className="flex flex-col items-start justify-center w-full pt-0 mt-0 text-left container z-50 relative" >
+      <div className="flex flex-col items-start justify-center w-full pt-24 sm:pt-52 pb-32 sm:pb-64 mt-0 text-left container">
         <div className='flex flex-col gap-0 text-8xl md:text-9xl'>
           <h1 className="text-primary font-bold w-full ">LEAGUE OF LEGENDS</h1>
-          <h2 className="text-white font-bold w-full">TOURNOIS ARAM</h2>
+          <h2 className="text-white font-bold w-full">TOURNOI ARAM</h2>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 w-full justify-start mt-6">
           <Button text="Inscription" url="https://inscription.tournoishaq.ca/" variant="bg-yellow" size="lg" />
