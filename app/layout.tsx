@@ -1,5 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
+import Head from 'next/head';
 
 export const metadata: Metadata = {
   title: 'Tournois HAQ',
@@ -13,6 +14,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <title>Tournois HAQ</title>
+        <meta name="description" content="HAQ - Tournois ARAM League of Legend" />
+        <meta property="og:title" content="Tournois HAQ" />
+        <meta property="og:description" content="HAQ - Tournois ARAM League of Legend" />
+        <meta property="og:image" content="/banner.png" />
+      </Head>
       <body>{children}</body>
     </html>
   )
