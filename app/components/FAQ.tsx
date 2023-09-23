@@ -60,12 +60,8 @@ export default function FAQ() {
       "answer": "Non, le tournoi est exclusivement réservé aux équipes complètes, soit possédant au minimum 5 joueurs."
     },
     {
-      "question": "J'ai atteint le rang Master pendant la saison 7, mais depuis, je n'ai pas dépassé le rang Diamond 2. Suis-je éligible pour le tournoi?",
-      "answer": "Non, si vous avez déjà été classé au-delà de Diamond 1 dans n'importe quelle saison, vous n'êtes pas éligible pour participer au tournoi."
-    },
-    {
-      "question": "J'ai été classé Bronze jusqu'à la dernière saison, mais cette année je suis Silver. Puis-je participer au tournoi?",
-      "answer": "Oui, tant que vous êtes classé au-dessus de Bronze dans la saison actuelle, vous êtes éligible pour le tournoi."
+      "question": "Quels niveaux de classement peuvent participer au tournoi?",
+      "answer": "Tous les niveaux de classement peuvent participer!"
     },
     {
       "question": "Quel est le format du tournoi?",
