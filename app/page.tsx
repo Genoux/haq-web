@@ -20,7 +20,6 @@ import AboutDraft from '@/app/components/AboutDraft'
 
 export default function Home() {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
 
   return (
     <>

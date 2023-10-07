@@ -10,8 +10,6 @@ export default function AboutDraft() {
   const parallaxRef3 = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    console.log("useEffect run"); // Debugging log
-
     const handleMouseMove = (e: MouseEvent) => {
 
       const { clientX: x, clientY: y } = e;
