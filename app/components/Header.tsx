@@ -12,7 +12,6 @@ export default function Header() {
     console.log("useEffect run"); // Debugging log
 
     const handleMouseMove = (e: MouseEvent) => {
-      console.log("Mouse moved"); // Debugging log
 
       const { clientX: x, clientY: y } = e;
       const { innerWidth: width, innerHeight: height } = window;
@@ -50,10 +49,9 @@ export default function Header() {
         </div>
         <div className="flex flex-col sm:flex-row gap-4 w-full justify-center mt-6">
           <Button text="Inscription" url="https://inscription.tournoishaq.ca/" variant="disabled" size="lg" />
-          <Button text="Contacter" url="mailto:contact@tournoishaq.ca" variant="bg-white" size="lg" />
+          <Button text="Nous contacter" url="mailto:contact@tournoishaq.ca" variant="bg-white" size="lg" />
         </div>
       </div>
-
     </motion.div>
   )
 }

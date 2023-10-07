@@ -16,7 +16,7 @@ import FAQ from '@/app/components/FAQ'
 import Footer from '@/app/components/Footer'
 import Header from '@/app/components/Header'
 import ThreeDWaveGrid from '@/app/components/three/ThreeDWaveGrid'
-import InfiniteBanner from '@/app/components/InfiniteBanner'
+import AboutDraft from '@/app/components/AboutDraft'
 
 export default function Home() {
   const ref = useRef(null);
@@ -31,6 +31,7 @@ export default function Home() {
         <div className='bg-black'>
           <About />
           <Inscription />
+          <AboutDraft />
           <FAQ />
           <Footer />
         </div>
