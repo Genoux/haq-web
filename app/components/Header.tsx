@@ -40,7 +40,7 @@ export default function Header() {
           <div className='bg-primary py-2 px-12 text-5xl text-secondary mx-auto mb-8 w-fit h-full'>SAISON 1</div>
           <h1 className="text-primary font-bold w-full lg:whitespace-nowrap">LEAGUE OF LEGENDS</h1>
           <h2 className="text-white font-bold w-full">TOURNOI ARAM</h2>
-          <p className='text-4xl md:text-5xl w-full mt-10 mb-6'>Date à déterminer</p>
+          <p className='text-4xl md:text-6xl w-full mt-10 mb-6'>28 OCTOBRE - 19H EST</p>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 w-full justify-center mt-6">
           <Button text="Inscription" url="https://inscription.tournoishaq.ca/" size="lg" />
