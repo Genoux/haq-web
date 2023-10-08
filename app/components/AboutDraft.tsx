@@ -41,9 +41,9 @@ export default function AboutDraft() {
 
   return (
     <div
-      className="text-center flex flex-col w-full text-white mt-56 mb-32 h-screen relative z-20 "
+      className="text-center flex flex-col w-full text-white mt-56 mb-24 h-screen relative z-20 "
     >
-      <div className='container mb-24'>
+      <div className='container mb-6 lg:mb-16'>
         <h1 className="text-7xl lg:text-8xl">Custom draft pick/ban</h1>
         <p className="text-3xl px-0 lg:px-12 font-normal mt-6">{'Nous avons développé un système de "pick & ban" personnalisé pour le mode ARAM, où les deux équipes partagent un pool de 30 champions aléatoires !'}</p>
       </div>
@@ -54,9 +54,7 @@ export default function AboutDraft() {
         <Image
           width={1220}  // The original width of your image
           height={900}  // The original height of your image
-          quality={100}
-          unoptimized={true}
-          className='mt-12 lg:mt-0'
+          quality={80}
           src="/images/demo-draft.png" alt="Aram draft pick" />
       </div>
     </div>
