@@ -19,11 +19,9 @@ import ThreeDWaveGrid from '@/app/components/three/ThreeDWaveGrid'
 import AboutDraft from '@/app/components/AboutDraft'
 
 export default function Home() {
-  const ref = useRef(null);
 
   return (
     <>
-
       <main className='z-50 relative overflow-x-hidden'>
         <NavBar />
         <Header />
