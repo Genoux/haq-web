@@ -16,7 +16,7 @@ export default function Inscription() {
           <h1 className="text-8xl sm:text-9xl">Inscriptions</h1>
           <p className="text-3xl px-0 lg:px-40 mb-6">Inscription gratuite et ouverte à tous - Inscrivez-vous dès maintenant!</p>
           <div className="flex flex-col sm:flex-row gap-4 w-full justify-center">
-            <Button text="Inscription" url="https://inscription.tournoishaq.ca/" variant="bg-black" size="lg" />
+            <Button text="Inscription - Gratuit" url="https://inscription.tournoishaq.ca/" variant="bg-black" size="lg" />
             <Button text="Règlements" url="https://reglements.tournoishaq.ca" variant="outline-black" size="lg" />
           </div>
         </div>

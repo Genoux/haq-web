@@ -43,7 +43,7 @@ export default function Header() {
           <p className='text-4xl md:text-6xl w-full mt-10 mb-6'>28 OCTOBRE - 19H EST</p>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 w-full justify-center mt-6">
-          <Button text="Inscription" url="https://inscription.tournoishaq.ca/" size="lg" />
+          <Button text="Inscription - Gratuit" url="https://inscription.tournoishaq.ca/" size="lg" />
           <Button text="Nous contacter" url="mailto:contact@tournoishaq.ca" variant="bg-white" size="lg" />
         </div>
       </div>
