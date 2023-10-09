@@ -16,21 +16,19 @@ import FAQ from '@/app/components/FAQ'
 import Footer from '@/app/components/Footer'
 import Header from '@/app/components/Header'
 import ThreeDWaveGrid from '@/app/components/three/ThreeDWaveGrid'
-import InfiniteBanner from '@/app/components/InfiniteBanner'
+import AboutDraft from '@/app/components/AboutDraft'
 
 export default function Home() {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
 
   return (
     <>
-
       <main className='z-50 relative overflow-x-hidden'>
         <NavBar />
         <Header />
         <div className='bg-black'>
           <About />
           <Inscription />
+          <AboutDraft />
           <FAQ />
           <Footer />
         </div>
