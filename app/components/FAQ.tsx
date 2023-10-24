@@ -53,7 +53,7 @@ export default function FAQ() {
     },
     {
       "question": "Existe-t-il un prix pour les vainqueurs?",
-      "answer": "Oui, l'équipe qui sera vainqueur de la saison gagnera 1380 RP pour chaque joueur de son équipe."
+      "answer": "Oui, l'équipe qui remportera la saison recevra un certain nombre de RP pour chaque joueur de son équipe."
     },
     {
       "question": "Est-ce que je peux m’inscrire sans avoir d’équipe?",
