@@ -8,6 +8,7 @@ const bai = Bai_Jamjuree({
   weight: ['400', '500', '600', '700']
 });
 
+const isNeutral = process.env.NEXT_PUBLIC_NEUTRAL === 'true';
 
 export default function NavBar() {
   return (
@@ -16,7 +17,9 @@ export default function NavBar() {
       <div className="menu flex items-center space-x-6">
         <Link target='_blank' href="https://reglements.tournoishaq.ca" className="text-white hover:underline underline-offset-4">Règlements</Link>
         <Link target='_blank' href={'mailto:contact@tournoishaq.ca'} className="text-white hover:underline underline-offset-4">Contact</Link>
-        <Button text="Inscription - Gratuit" url="https://inscription.tournoishaq.ca/" size="md" />
+        { !isNeutral &&
+          <Button text="Inscription - Gratuit" url="https://inscription.tournoishaq.ca/" size="md" />
+        }
       </div>
     </nav>
   )
