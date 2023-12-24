@@ -4,7 +4,7 @@ import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
 import { BokehPass } from 'three/examples/jsm/postprocessing/BokehPass';
 
-const ThreeDWaveGrid = ({ waveSpeed = 0.1, waveFrequency = 25, gridSize = 300, gridSpacing = 2, minColor = 0xDCFC35, maxColor = 0xDCFC35 }) => {
+const ThreeDWaveGrid = ({ waveSpeed = 0.02, waveFrequency = 25, gridSize = 100, gridSpacing = 2, minColor = 0xffffff, maxColor = 0xffffff }) => {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const ThreeDWaveGrid = ({ waveSpeed = 0.1, waveFrequency = 25, gridSize = 300, g
     // Create a scene and camera
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(38, width / height, 0.1, 1000);
-    camera.position.set(180, 45, 70);
+    camera.position.set(0, 90, 0);
     camera.lookAt(scene.position);
     
     // Create a WebGLRenderer

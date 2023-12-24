@@ -1,16 +1,10 @@
 "use client"
 
-import Image from 'next/image'
 import NavBar from '@/app/components/NavBar'
 import About from '@/app/components/About'
 import Inscription from '@/app/components/Inscription'
-import { useRef, useEffect } from "react";
 import {
   motion,
-  useScroll,
-  useSpring,
-  useTransform,
-  MotionValue
 } from "framer-motion";
 import FAQ from '@/app/components/FAQ'
 import Footer from '@/app/components/Footer'

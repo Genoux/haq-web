@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import Head from 'next/head';
+import { GeistSans } from "geist/font/sans";
+import { ThemeProvider } from "@/app/components/ui/theme-provider";
 
 export const metadata: Metadata = {
   title: 'Tournois HAQ',
@@ -14,7 +15,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${GeistSans.className}`}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
