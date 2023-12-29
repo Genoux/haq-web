@@ -1,18 +1,27 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import Button from '@/app/components/Button'
-import clsx from 'clsx';
+import { Button } from "@/app/components/ui/button"
+import { Twitch } from 'lucide-react';
+import { Facebook } from 'lucide-react';
 
 const isNeutral = process.env.NEXT_PUBLIC_NEUTRAL === 'true';
 
 export default function NavBar() {
   return (
-    <nav className={clsx('z-50 relative container mx-auto py-2 flex flex-col gap-6 sm:flex-row sm:gap-0 justify-between items-center text-white font-bold text-sm uppercase')}>
-      <Image width={250} height={100} src="/logo.svg" alt="Tournois HAQ" />
-      <div className="menu flex items-center space-x-6">
-        <Link target='_blank' href="https://reglements.tournoishaq.ca" className="text-white hover:underline underline-offset-4">Règlements</Link>
-        <Link target='_blank' href={'mailto:contact@tournoishaq.ca'} className="text-white hover:underline underline-offset-4">Contact</Link>
-        <Button variant="bg-blue" text="Inscription - Gratuit" url="https://inscription.tournoishaq.ca/" size="md" />
+    <nav className='sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
+      <div className='container h-14 flex flex-col gap-6 sm:flex-row sm:gap-0 justify-between text-sm'>
+        <div className='flex items-center gap-6'>
+          <Image width={160} height={100} src="/logo.svg" alt="Tournois HAQ" />
+          <Link href={''} className='transition-colors hover:text-foreground/80 text-foreground/60'>Reglements</Link>
+          <Link target='_blank' href={'mailto:contact@tournoishaq.ca'} className='transition-colors hover:text-foreground/80 text-foreground/60'>Contact</Link>
+        </div>
+        <div className="menu flex items-center gap-2 cursor-pointer">
+          <Button variant="default" size={"sm"}>Inscription</Button>
+          <div>
+            <Twitch className='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9 px-0' />
+            <Facebook className='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9 px-0' />
+          </div>
+        </div>
       </div>
     </nav>
   )

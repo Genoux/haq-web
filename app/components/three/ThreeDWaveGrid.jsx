@@ -4,7 +4,7 @@ import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
 import { BokehPass } from 'three/examples/jsm/postprocessing/BokehPass';
 
-const ThreeDWaveGrid = ({ waveSpeed = 0.02, waveFrequency = 25, gridSize = 100, gridSpacing = 2, minColor = 0xffffff, maxColor = 0xffffff }) => {
+const ThreeDWaveGrid = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const ThreeDWaveGrid = ({ waveSpeed = 0.02, waveFrequency = 25, gridSize = 100, 
     // Create a scene and camera
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(38, width / height, 0.1, 1000);
-    camera.position.set(0, 90, 0);
+    camera.position.set(60, 60, 70);
     camera.lookAt(scene.position);
     
     // Create a WebGLRenderer
@@ -29,8 +29,8 @@ const ThreeDWaveGrid = ({ waveSpeed = 0.02, waveFrequency = 25, gridSize = 100, 
     composer.addPass(renderPass);
 
     // Grid size and spacing
-   // const gridSize = 100;
-  //  const gridSpacing = 4;
+    const gridSize = 100;
+    const gridSpacing = 4;
 
     // Create a wireframe grid with custom shader material
     const geometry = new THREE.PlaneGeometry(gridSize, gridSize, gridSize / gridSpacing, gridSize / gridSpacing);
@@ -54,18 +54,17 @@ const ThreeDWaveGrid = ({ waveSpeed = 0.02, waveFrequency = 25, gridSize = 100, 
       vec3 gradientColor = mix(color1, color2, vUv.y);
   
       // Create an opacity gradient based on the vUv.y coordinate
-      float opacityGradient = mix(.2, 0.01, vUv.y); // Change 0.2 and 1.0 to desired min and max opacity values
+      float opacityGradient = mix(.1, 0.01, vUv.y); // Change 0.2 and 1.0 to desired min and max opacity values
       float finalOpacity = fade * opacityGradient;
   
       gl_FragColor = vec4(gradientColor, finalOpacity);
     }
-  `; 
-    
+  `;
   
   const material = new THREE.ShaderMaterial({
     uniforms: {
-      color1: { value: new THREE.Color(minColor) }, // Red color
-      color2: { value: new THREE.Color(maxColor) }, // Blue color
+      color1: { value: new THREE.Color(0xFFFFFF) }, // Red color
+      color2: { value: new THREE.Color(0xFFFFFF) }, // Blue color
     },
     vertexShader,
     fragmentShader,
@@ -95,9 +94,11 @@ const ThreeDWaveGrid = ({ waveSpeed = 0.02, waveFrequency = 25, gridSize = 100, 
       width: width,
       height: height,
     });
-    //composer.addPass(bokehPass);
+   // composer.addPass(bokehPass);
 
     // Animation loop
+    const waveSpeed = 0.04
+    const waveFrequency = 15;
     const animate = () => {
       requestAnimationFrame(animate);
 
@@ -124,7 +125,7 @@ const ThreeDWaveGrid = ({ waveSpeed = 0.02, waveFrequency = 25, gridSize = 100, 
       renderer.dispose();
       container.removeChild(renderer.domElement);
     };
-  },  [waveSpeed, waveFrequency, gridSize, gridSpacing]);
+  }, []);
 
   return <div ref={containerRef} className="fixed Z-0 top-0 left-0 w-full h-full" />;
 };

@@ -17,6 +17,9 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: {
+        'theme-gradient': "linear-gradient(85deg, #00C2FF 7.47%, #0038FF 106.04%)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -73,5 +76,19 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"),
+  
+  function({ addUtilities }) {
+    const newUtilities = {
+      '.text-theme-gradient': {
+        backgroundImage: "linear-gradient(85deg, #00C2FF 7.47%, #0038FF 106.04%)",
+        backgroundClip: 'text',
+        textFillColor: 'transparent',
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+      },
+    };
+    addUtilities(newUtilities, ['responsive', 'hover']);
+  }
+  ],
 }

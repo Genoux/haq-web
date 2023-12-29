@@ -4,15 +4,10 @@ import clsx from 'clsx';
 import { Facebook, Instagram, Twitch, Twitter } from 'lucide-react'
 import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
-import Waves from '@/app/components/three/Waves'
-
 
 export default function Footer() {
   return (
     <>
-      <div>
-        <Waves />
-      </div>
       <div className="container mx-auto flex flex-col items-center gap-12 w-full justify-center py-48 z-50 relative">
         <Image width={390} height={390} src="/s1-logo.svg" alt="Tournois HAQ" />
         <div className='flex gap-4'>

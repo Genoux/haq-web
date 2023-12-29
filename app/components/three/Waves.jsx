@@ -6,7 +6,6 @@ import { BokehPass } from 'three/examples/jsm/postprocessing/BokehPass';
 
 const Waves = ({ waveSpeed = 0.4, waveFrequency = 15, gridSize = 250, gridSpacing = 4, minColor = 0xfffffff, maxColor = 0xffffff }) => {
   const containerRef = useRef(null);
-
   useEffect(() => {
     const container = containerRef.current;
     const width = container.clientWidth;
@@ -124,7 +123,7 @@ const Waves = ({ waveSpeed = 0.4, waveFrequency = 15, gridSize = 250, gridSpacin
     };
   },  [waveSpeed, waveFrequency, gridSize, gridSpacing]);
 
-  return <div ref={containerRef} className="fixed Z-0 top-0 left-0 w-full h-full" />;
+  return <div ref={containerRef} className="fixed Z-50 bg-red-700 top-0 left-0 w-full h-full" />;
 };
 
 export default Waves;

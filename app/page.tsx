@@ -10,22 +10,23 @@ import FAQ from '@/app/components/FAQ'
 import Footer from '@/app/components/Footer'
 import Header from '@/app/components/Header'
 import ThreeDWaveGrid from '@/app/components/three/ThreeDWaveGrid'
+import Waves from '@/app/components/three/Waves'
 import AboutDraft from '@/app/components/AboutDraft'
 
 export default function Home() {
 
   return (
     <>
-      <main className='z-50 relative overflow-x-hidden'>
+      <main className='relative flex min-h-screen flex-col bg-background'>
+      <ThreeDWaveGrid />
+
         <NavBar />
         <Header />
-        <div className='bg-black'>
           <About />
           <Inscription />
           <AboutDraft />
           <FAQ />
           <Footer />
-        </div>
       </main>
 
       <motion.div
