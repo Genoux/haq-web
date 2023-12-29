@@ -17,6 +17,12 @@ export default function Home() {
 
   return (
     <>
+        <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: .2, delay: .1 }} >
+        <ThreeDWaveGrid />
+      </motion.div>
       <main className='relative flex min-h-screen flex-col bg-background'>
       <ThreeDWaveGrid />
 
@@ -29,12 +35,7 @@ export default function Home() {
           <Footer />
       </main>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: .2, delay: .1 }} >
-        <ThreeDWaveGrid />
-      </motion.div>
+    
     </>
   )
 }
