@@ -1,6 +1,8 @@
 import { Button } from '@/app/components/ui/button'
 import { motion } from 'framer-motion'
 import { useRef, useEffect } from 'react'
+import Waves from './three/Waves'
+import { MoveRight } from 'lucide-react';
 
 export default function Header() {
   const isNeutral = process.env.NEXT_PUBLIC_NEUTRAL === 'true';
@@ -28,20 +30,39 @@ export default function Header() {
   }, []);
 
   return (
-
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-      className="sm:pt-24 pb-32 sm:pb-5">
-      <div className='mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20'>
-        <div className='flex flex-col gap-2 mb-6 text-center'>
-          <h1 className='text-center text-theme-gradient text-3xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1]'>Tournois HAQ Saison 2</h1>
-          <p className='max-w-[750px] text-center text-lg sm:text-xl'>Lorem ipsum dolor sit amet consectetur. Consectetur in eu elementum malesuada massa vitae sapien.</p>
-        </div>
-        <Button variant="default" size={"lg"} className=''>Inscription</Button>
+    <>
+      <div className='absolute z-30'>
+        <Waves />
       </div>
-    </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        className="z-40 theme-zinc">
+
+        <section className='max-w-[1024px] border-x mx-auto text-center gap-2 py-48 px-6'>
+          <div className='flex flex-col gap-4 mb-6'>
+          <p className='text-theme-gradient tracking-tighter font-bold text-5xl w-full'>Saison 2</p>
+
+            <div className='flex flex-col gap-2'>
+
+              <h1 className='text-6xl font-extrabold leading-tight tracking-tighter lg:leading-[1.1]'>Tournois League Of Legend Aram</h1>
+
+              <p className='max-w-[750px] mx-auto text-lg text-muted-foreground sm:text-xl'>
+                {"ARAM en mode compétitif, enrichi d'un système de draft personnalisé pour une stratégie renouvelée"}
+              </p>
+            </div>
+          </div>
+          <div className='flex gap-4 justify-center'>
+            <Button variant="default">Inscription</Button>
+            <Button variant="outline">Contacter</Button>
+
+
+          </div>
+
+        </section>
+      </motion.div>
+    </>
   )
 }

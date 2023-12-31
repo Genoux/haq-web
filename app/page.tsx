@@ -17,25 +17,18 @@ export default function Home() {
 
   return (
     <>
-        <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: .2, delay: .1 }} >
-        <ThreeDWaveGrid />
-      </motion.div>
-      <main className='relative flex min-h-screen flex-col bg-background'>
-      <ThreeDWaveGrid />
-
+      
+      
+      <main className='z-50 flex min-h-screen flex-col bg-transparent'>
         <NavBar />
         <Header />
-          <About />
-          <Inscription />
-          <AboutDraft />
-          <FAQ />
-          <Footer />
+        <div className='hidden h-3 border border-opacity-25 m-fit max-w-5xl mx-auto w-full'></div>
+        <About />
+        <Inscription />
+        <AboutDraft />
+        <FAQ />
+        <Footer />
       </main>
-
-    
     </>
   )
 }

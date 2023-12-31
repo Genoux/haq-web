@@ -4,16 +4,24 @@ import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
 import { BokehPass } from 'three/examples/jsm/postprocessing/BokehPass';
 
-const Waves = ({ waveSpeed = 0.4, waveFrequency = 15, gridSize = 250, gridSpacing = 4, minColor = 0xfffffff, maxColor = 0xffffff }) => {
+const Waves = ({ waveSpeed = 0.2, waveFrequency = 24, gridSize = 220, gridSpacing = 6, minColor = 0xfffffff, maxColor = 0xffffff }) => {
   const containerRef = useRef(null);
   useEffect(() => {
     const container = containerRef.current;
-    const width = container.clientWidth;
-    const height = container.clientHeight;
+    let width = container.clientWidth;
+    let height = container.clientHeight;
+
+    if (width === 0 || height === 0) {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      console.log('Default dimensions set for container');
+    }
 
     // Create a scene and camera
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(0, width / height, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(80, width / height, 0.1, 1000);
+    camera.position.set(0, 45, 45 );
+    camera.lookAt(scene.position);
     
     // Create a WebGLRenderer
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
@@ -45,13 +53,13 @@ const Waves = ({ waveSpeed = 0.4, waveFrequency = 15, gridSize = 250, gridSpacin
     uniform vec3 color2;
     varying vec2 vUv;
     void main() {
-      float fade = 1.0 - smoothstep(0.1, 0.5, length(vUv - 0.5));
+      float fade = 1.0 - smoothstep(0.2, 0.5, length(vUv - 0.5));
   
       // Create a color gradient based on the vUv.y coordinate
       vec3 gradientColor = mix(color1, color2, vUv.y);
   
       // Create an opacity gradient based on the vUv.y coordinate
-      float opacityGradient = mix(.1, 0.01, vUv.y); // Change 0.2 and 1.0 to desired min and max opacity values
+      float opacityGradient = mix(.002, 0.1, vUv.y); // Change 0.2 and 1.0 to desired min and max opacity values
       float finalOpacity = fade * opacityGradient;
   
       gl_FragColor = vec4(gradientColor, finalOpacity);
@@ -123,7 +131,7 @@ const Waves = ({ waveSpeed = 0.4, waveFrequency = 15, gridSize = 250, gridSpacin
     };
   },  [waveSpeed, waveFrequency, gridSize, gridSpacing]);
 
-  return <div ref={containerRef} className="fixed Z-50 bg-red-700 top-0 left-0 w-full h-full" />;
+  return <div ref={containerRef} />;
 };
 
 export default Waves;

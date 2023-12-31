@@ -41,7 +41,7 @@ export default function AboutDraft() {
 
   return (
     <div
-      className="text-center flex flex-col w-full text-white mt-56 mb-0 lg:mb-24 h-screen relative z-20 "
+      className="bg-black text-center flex flex-col w-full text-white mb-0 lg:mb-24 h-screen relative z-20 "
     >
       <div className='container mb-6 lg:mb-16'>
         <h1 className="text-7xl lg:text-8xl">Custom draft pick/ban</h1>
