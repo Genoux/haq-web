@@ -4,7 +4,7 @@ import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
 import { BokehPass } from 'three/examples/jsm/postprocessing/BokehPass';
 
-const Waves = ({ waveSpeed = 0.5, waveFrequency = 24, gridSize = 220, gridSpacing = 6, minColor = 0xfffffff, maxColor = 0xffffff }) => {
+const Waves = ({ waveSpeed = 0.1, waveFrequency = 24, gridSize = 220, gridSpacing = 6, minColor = 0xfffffff, maxColor = 0xffffff }) => {
   const containerRef = useRef(null);
   useEffect(() => {
     const container = containerRef.current;

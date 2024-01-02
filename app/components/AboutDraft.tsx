@@ -38,7 +38,6 @@ export default function AboutDraft() {
       quality={100}
       src="/images/draft.png" alt="Aram draft pick" className='z-50 pt-4 w-full max-w-5xl mx-auto border' />
         <div className=' bg-gradient-to-t from-black via-transparent to-transparent absolute top-0 left-0 h-full w-full'>
-
         </div>
       </div>
      
