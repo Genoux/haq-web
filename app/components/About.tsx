@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { Button } from '@/app/components/ui/button'
+import Link from 'next/link'
 
 export default function About() {
   return (
@@ -21,7 +22,7 @@ export default function About() {
               <p className='text-muted-foreground text-xl font-medium'>
                 Format de double élimination place limitée et un prix à gagner!
               </p>
-              <Button variant="outline" className='w-fit mt-4' size={"lg"}>Règlements</Button>
+            <Link target='_blank' href={'https://reglements.tournoishaq.ca'}><Button variant="outline" className='w-fit mt-4' size={"lg"}>Règlements</Button></Link>  
 
             </div>
           </div>

@@ -2,7 +2,7 @@ import { Button } from '@/app/components/ui/button'
 import { motion } from 'framer-motion'
 import { useRef, useEffect } from 'react'
 import Waves from './three/Waves'
-import { MoveRight } from 'lucide-react';
+import Link from 'next/link'
 
 export default function Header() {
   const isNeutral = process.env.NEXT_PUBLIC_NEUTRAL === 'true';
@@ -41,7 +41,7 @@ export default function Header() {
         transition={{ duration: 0.5 }}
         className="z-40 theme-zinc">
         <section className='relative z-10 max-w-[1024px] border-x border-b mx-auto text-center gap-2 py-48 px-6'>
-        
+
           <div className='flex flex-col gap-3 mb-6'>
             <p className='uppercase text-theme-gradient tracking-tighter font-extrabold text-5xl w-full'>Saison 2</p>
             <div className='flex flex-col gap-2'>
@@ -52,14 +52,11 @@ export default function Header() {
             </div>
           </div>
           <div className='flex gap-4 justify-center'>
-            <Button variant="default">Inscription</Button>
-            <Button variant="outline">Contacter</Button>
-
-
+            <Link target='_blank' href={'https://inscription.tournoishaq.ca/'}> <Button variant="default">Inscription</Button></Link>
+            <Link target='_blank' href={'mailto:contact@tournoishaq.ca'}> <Button variant="outline">Contacter</Button></Link>
           </div>
         </section>
         <div className='z-0 bg-gradient-to-t from-black to-transparent absolute top-0 left-0 h-full w-full'></div>
-
       </motion.div>
     </>
   )

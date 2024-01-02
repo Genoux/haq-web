@@ -1,5 +1,5 @@
 import { Button } from '@/app/components/ui/button'
-
+import Link from 'next/link'
 export default function Inscription() {
   const isNeutral = process.env.NEXT_PUBLIC_NEUTRAL === 'true';
 
@@ -11,7 +11,7 @@ export default function Inscription() {
             <h1 className='text-4xl font-bold tracking-tighter'>Incriptions ouvertes</h1>
             <p className='text-lg text-muted-foreground'>Les inscriptions sont maintenant ouvertes! Dépêchez-vous, les places sont limitées.</p>
           </div>
-          <Button variant='default' className='w-fit'>{"S'inscrire"}</Button>
+          <Link target='_blank' href={'https://inscription.tournoishaq.ca/'}><Button variant='default' className='w-fit'>{"S'inscrire"}</Button></Link> 
         </div>
         <div className='bg-theme-gradien-50 backdrop-contrast-100 z-40 absolute top-0 left-0 w-full h-full'></div>
         <video className="absolute z-30 top-0 left-0 w-full h-full object-cover" autoPlay loop muted>
