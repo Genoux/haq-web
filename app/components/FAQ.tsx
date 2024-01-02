@@ -1,91 +1,113 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { ChevronUp, ChevronDown } from 'lucide-react';
 import clsx from 'clsx';
-import { Inter } from 'next/font/google';
-const inter = Inter({ subsets: ['latin'] });
+import { motion, AnimatePresence } from 'framer-motion';
 
 type FAQItemProps = {
   question: string;
   answer: string;
   index: number;
-  openItems: boolean[];
-  setOpenItems: React.Dispatch<React.SetStateAction<boolean[]>>;
-  hoveredIndex: number | null;
-  setHoveredIndex: (index: number | null) => void;
+  openItemIndex: number | null;
+  setOpenItemIndex: React.Dispatch<React.SetStateAction<number | null>>;
 };
 
-const FAQItem: React.FC<FAQItemProps> = ({ question, answer, index, openItems, setOpenItems, hoveredIndex, setHoveredIndex }) => {
-
+const FAQItem: React.FC<FAQItemProps> = ({
+  question,
+  answer,
+  index,
+  openItemIndex,
+  setOpenItemIndex,
+}) => {
   const handleToggle = () => {
-    const newOpenItems = openItems.map((item, idx) => idx === index ? !item : false);
-    setOpenItems(newOpenItems);
+    setOpenItemIndex(openItemIndex === index ? null : index);
+  };
+
+  const isOpen = index === openItemIndex;
+
+  const variants = {
+    open: { opacity: 1, height: 'auto' },
+    collapsed: { opacity: 0, height: 0 },
   };
 
   return (
     <div
       onClick={handleToggle}
-      onMouseLeave={() => setHoveredIndex(null)}
       className={clsx(
-        'transition-all duration-200 cursor-pointer py-3 z-50',
-        { 'opacity-20': hoveredIndex !== null && hoveredIndex !== index }, inter.className
+        'cursor-pointer py-6 z-50 hover:bg-zinc-500 hover:bg-opacity-10 transition-all duration-100 px-6 rounded',
+        { 'bg-zinc-600 bg-opacity-10': isOpen } // Apply bg-zinc-600 when the item is open
       )}
     >
       <div className='flex justify-between items-center'>
         <h3 className='text-lg font-semibold text-white'>{question}</h3>
-        <span>{openItems[index] ? <ChevronUp /> : <ChevronDown />}</span>
+        <motion.div
+          animate={{ rotate: isOpen ? 0 : 180 }}
+          transition={{ duration: 0.2 }}
+        >
+          <ChevronDown /> 
+        </motion.div>
       </div>
-      {openItems[index] &&
-        <p className='text-md mt-1 font-normal opacity-60 text-white'>{answer}</p>
-      }
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial="collapsed"
+            animate="open"
+            exit="collapsed"
+            variants={variants}
+            transition={{ duration: 0.1 }} // Faster animation
+            className='text-md font-normal text-muted-foreground max-w-3xl mt-1' // Muted text color
+          >
+            <p>{answer}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
 
+
 export default function FAQ() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [openItems, setOpenItems] = useState<boolean[]>([]);
+  const [openItemIndex, setOpenItemIndex] = useState<number | null>(null);
+
   const faqData = useMemo(() => [
     {
-      "question": "L'inscription au tournoi est-elle payante?",
-      "answer": "Non, l'inscription au tournoi est gratuite. Assurez-vous d'avoir une équipe complète de 5 joueurs."
+      question: "L'inscription au tournoi est-elle payante?",
+      answer: "Non, l'inscription au tournoi est gratuite. Assurez-vous d'avoir une équipe complète de 5 joueurs."
     },
     {
-      "question": "Existe-t-il un prix pour les vainqueurs?",
-      "answer": "Oui, l'équipe qui remportera la saison recevra un certain nombre de RP pour chaque joueur de son équipe."
+      question: "Existe-t-il un prix pour les vainqueurs?",
+      answer: "Oui, l'équipe qui remportera la saison recevra un certain nombre de RP pour chaque joueur de son équipe."
     },
     {
-      "question": "Est-ce que je peux m’inscrire sans avoir d’équipe?",
-      "answer": "Non, le tournoi est exclusivement réservé aux équipes complètes, soit possédant au minimum 5 joueurs."
+      question: "Est-ce que je peux m’inscrire sans avoir d’équipe?",
+      answer: "Non, le tournoi est exclusivement réservé aux équipes complètes, soit possédant au minimum 5 joueurs."
     },
     {
-      "question": "Quels niveaux de classement peuvent participer au tournoi?",
-      "answer": "Tous les niveaux de classement peuvent participer!"
+      question: "Quels niveaux de classement peuvent participer au tournoi?",
+      answer: "Tous les niveaux de classement peuvent participer!"
     },
     {
-      "question": "Quel est le format du tournoi?",
-      "answer": "Le tournoi se déroulera sous forme de double élimination. Cela signifie qu'il y aura un bracket des gagnants et un bracket des perdants, vous garantissant au minimum deux matchs à jouer."
+      question: "Quel est le format du tournoi?",
+      answer: "Le tournoi se déroulera sous forme de double élimination. Cela signifie qu'il y aura un bracket des gagnants et un bracket des perdants, vous garantissant au minimum deux matchs à jouer."
     }
-  ]
-    , []);
+    // Add more FAQ items as needed
+  ], []);
 
   useEffect(() => {
-    setOpenItems(new Array(faqData.length).fill(false));
+    setOpenItemIndex(null);
   }, [faqData]);
 
   return (
-    <div className='max-w-5xl mx-auto relative z-20 overflow-hidden w-full py-12'>
+    <div className='max-w-5xl mx-auto relative z-20 overflow-hidden w-full pt-48 h-screen'>
       <h1 className='text-5xl font-bold tracking-tighter mb-6'>FAQs</h1>
-      <div className=''>
+      <div className='flex gap-2 flex-col'>
         {faqData.map((item, index) => (
           <FAQItem
             key={index}
             index={index}
-            openItems={openItems}
-            setOpenItems={setOpenItems}
-            hoveredIndex={hoveredIndex}
-            setHoveredIndex={setHoveredIndex}
             question={item.question}
             answer={item.answer}
+            openItemIndex={openItemIndex}
+            setOpenItemIndex={setOpenItemIndex}
           />
         ))}
       </div>
