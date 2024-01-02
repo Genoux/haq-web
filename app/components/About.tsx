@@ -7,7 +7,7 @@ export default function About() {
 
 
       <div className="z-40 bg-black relative w-full overflow-hidden">
-        <div className='max-w-[1024px] relative z-50 gap-12 px-12 py-24 border-opacity-50 mx-auto border-x'>
+        <div className='max-w-[1024px] relative z-50 gap-12 px-12 py-24 border-opacity-10 mx-auto border-x'>
           <video className="hidden top-0 left-0 z-30 w-full h-full object-cover rounded" autoPlay loop muted>
             <source src="https://assets.contentstack.io/v3/assets/blt731acb42bb3d1659/blt368bbe12c8917439/5d87c69c5b3acf6e5c6efa6a/howlingabyss.mp4" type="video/mp4" />
           </video>

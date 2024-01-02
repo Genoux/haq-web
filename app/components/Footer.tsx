@@ -9,7 +9,8 @@ export default function Footer() {
   return (
     <>
       <div className="container mx-auto flex flex-col items-center gap-12 w-full justify-center py-48 z-50 relative">
-        <Image width={390} height={390} src="/s1-logo.svg" alt="Tournois HAQ" />
+        <Image width={260} height={100} src="logo.svg" alt="Tournois HAQ" />
+
         <div className='flex gap-4'>
           <Link href={'https://www.facebook.com/profile.php?id=100093560062096'} target="_blank"><Facebook className=' cursor-pointer transition-all hover:opacity-25 hover:scale-95' /></Link>
           <Link href={'https://www.instagram.com/tournois_haq/'} target="_blank"><Instagram className=' cursor-pointer transition-all hover:opacity-25 hover:scale-95' /></Link>

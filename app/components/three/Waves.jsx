@@ -4,7 +4,7 @@ import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
 import { BokehPass } from 'three/examples/jsm/postprocessing/BokehPass';
 
-const Waves = ({ waveSpeed = 0.2, waveFrequency = 24, gridSize = 220, gridSpacing = 6, minColor = 0xfffffff, maxColor = 0xffffff }) => {
+const Waves = ({ waveSpeed = 0.5, waveFrequency = 24, gridSize = 220, gridSpacing = 6, minColor = 0xfffffff, maxColor = 0xffffff }) => {
   const containerRef = useRef(null);
   useEffect(() => {
     const container = containerRef.current;
@@ -20,7 +20,7 @@ const Waves = ({ waveSpeed = 0.2, waveFrequency = 24, gridSize = 220, gridSpacin
     // Create a scene and camera
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(80, width / height, 0.1, 1000);
-    camera.position.set(0, 45, 45 );
+    camera.position.set(25, 45, 45 );
     camera.lookAt(scene.position);
     
     // Create a WebGLRenderer
@@ -59,7 +59,7 @@ const Waves = ({ waveSpeed = 0.2, waveFrequency = 24, gridSize = 220, gridSpacin
       vec3 gradientColor = mix(color1, color2, vUv.y);
   
       // Create an opacity gradient based on the vUv.y coordinate
-      float opacityGradient = mix(.002, 0.1, vUv.y); // Change 0.2 and 1.0 to desired min and max opacity values
+      float opacityGradient = mix(.005, 0.1, vUv.y); // Change 0.2 and 1.0 to desired min and max opacity values
       float finalOpacity = fade * opacityGradient;
   
       gl_FragColor = vec4(gradientColor, finalOpacity);

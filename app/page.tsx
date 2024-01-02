@@ -22,9 +22,10 @@ export default function Home() {
       <main className='z-50 flex min-h-screen flex-col bg-transparent'>
         <NavBar />
         <Header />
-        <div className='hidden h-3 border border-opacity-25 m-fit max-w-5xl mx-auto w-full'></div>
         <About />
+        <div className='hidden h-3 border border-opacity-25 m-fit max-w-5xl mx-auto w-full'></div>
         <Inscription />
+
         <AboutDraft />
         <FAQ />
         <Footer />

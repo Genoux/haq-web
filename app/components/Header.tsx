@@ -41,14 +41,11 @@ export default function Header() {
         transition={{ duration: 0.5 }}
         className="z-40 theme-zinc">
 
-        <section className='max-w-[1024px] border-x mx-auto text-center gap-2 py-48 px-6'>
-          <div className='flex flex-col gap-4 mb-6'>
-          <p className='text-theme-gradient tracking-tighter font-bold text-5xl w-full'>Saison 2</p>
-
+        <section className='max-w-[1024px] border-x border-b mx-auto text-center gap-2 py-48 px-6'>
+          <div className='flex flex-col gap-3 mb-6'>
+            <p className='uppercase text-theme-gradient tracking-tighter font-bold text-5xl w-full'>Saison 2</p>
             <div className='flex flex-col gap-2'>
-
               <h1 className='text-6xl font-extrabold leading-tight tracking-tighter lg:leading-[1.1]'>Tournois League Of Legend Aram</h1>
-
               <p className='max-w-[750px] mx-auto text-lg text-muted-foreground sm:text-xl'>
                 {"ARAM en mode compétitif, enrichi d'un système de draft personnalisé pour une stratégie renouvelée"}
               </p>
