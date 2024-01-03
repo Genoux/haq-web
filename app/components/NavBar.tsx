@@ -51,8 +51,6 @@ export default function NavBar() {
     return () => window.removeEventListener('resize', handleResize);
   }, [isMobileMenuOpen]); // Dependency array ensures effect runs when isMobileMenuOpen changes
 
-
-
   return (
     <nav className='sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
       <div className='container mx-auto px-4 h-14 flex items-center justify-between w-full text-sm'>
@@ -60,9 +58,9 @@ export default function NavBar() {
         {/* Logo and Hamburger Menu Icon */}
         <div className='flex flex-row items-center h-full justify-between w-full sm:w-fit'>
           <Image width={180} height={100} src="/logo.svg" alt="Tournois HAQ" />
-            <button ref={mobileMenuButtonRef} onClick={toggleMobileMenu} className='sm:hidden'>
-              <Menu className='w-6 h-6' />
-            </button>
+          <button ref={mobileMenuButtonRef} onClick={toggleMobileMenu} className='sm:hidden'>
+            <Menu className='w-6 h-6' />
+          </button>
         </div>
 
         {/* Main Links and Social Icons */}

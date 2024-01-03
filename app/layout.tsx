@@ -2,7 +2,6 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { GeistSans } from "geist/font/sans";
 import { ThemeProvider } from "@/app/components/ui/theme-provider";
-import Head from 'next/head';
 
 export const metadata: Metadata = {
   title: 'Tournois HAQ',

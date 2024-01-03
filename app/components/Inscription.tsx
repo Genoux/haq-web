@@ -1,8 +1,7 @@
 import { Button } from '@/app/components/ui/button'
 import Link from 'next/link'
-export default function Inscription() {
-  const isNeutral = process.env.NEXT_PUBLIC_NEUTRAL === 'true';
 
+export default function Inscription() {
   return (
     <>
       <div className="max-w-5xl mx-auto relative z-20 overflow-hidden flex flex-col-reverse sm:flex-row w-full h-full">
