@@ -1,21 +1,31 @@
-import Button from '@/app/components/Button'
-import Link from 'next/link'
 import Image from 'next/image'
-import { useRef, useEffect } from 'react'
+import { useEffect, useState } from 'react';
 import { MoveDown } from 'lucide-react';
+import GridAnimation from '@/app/components/GridAnimation';
+import { motion } from 'framer-motion';
 
 export default function AboutDraft() {
+  const [opacity, setOpacity] = useState(0);
 
-  const parallaxRef = useRef<HTMLDivElement>(null);
-  const parallaxRef2 = useRef<HTMLDivElement>(null);
-  const parallaxRef3 = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const handleScroll = () => {
+      const maxScroll = window.innerHeight;
+      const currentScroll = window.scrollY;
+      const newOpacity = Math.min(1, currentScroll / maxScroll);
 
+      setOpacity(newOpacity);
+    };
 
+    window.addEventListener('scroll', handleScroll);
 
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <>
-      <div className="max-w-5xl items-center relative mx-auto border-x bg-black text-center flex flex-col w-full text-white">
+      <div className="z-40 max-w-5xl items-center relative mx-auto border-x bg-black text-center flex flex-col w-full text-white">
         <div className='grid grid-cols-3 z-50 absolute top-0 left-0 h-full w-full'>
           <div className='border-r border-white border-opacity-10 w-full h-full'></div>
           <div className='border-r border-white border-opacity-10 w-full h-full'></div>
@@ -26,15 +36,17 @@ export default function AboutDraft() {
         </div>
         <MoveDown size={32} className='-mb-4 relative z-50' />
       </div>
-      <div className='relative'>
+      <motion.div     style={{ opacity }}
+        transition={{ duration: 0.2 }} className='relative'>
+
         <Image
           width={1920}  // The original width of your image
           height={900}  // The original height of your image
           quality={100}
           src="/images/draft.png" alt="Aram draft pick" className='z-50 pt-4 w-full max-w-5xl mx-auto border' />
-        <div className=' bg-gradient-to-t from-black via-transparent to-transparent absolute top-0 left-0 h-full w-full'>
+        <div className='bg-gradient-to-t from-black via-transparent to-transparent absolute top-0 left-0 h-full w-full'>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

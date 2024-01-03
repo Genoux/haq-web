@@ -131,7 +131,7 @@ const Waves = ({ waveSpeed = 0.1, waveFrequency = 24, gridSize = 220, gridSpacin
     };
   },  [waveSpeed, waveFrequency, gridSize, gridSpacing]);
 
-  return <div ref={containerRef} />;
+  return <div ref={containerRef} style={{ width: '100%', height: '100%' }} />;
 };
 
 export default Waves;

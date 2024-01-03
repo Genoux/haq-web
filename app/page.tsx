@@ -18,18 +18,24 @@ export default function Home() {
   return (
     <>
       
-      
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.25 }}
+      >
+
       <main className='z-50 flex min-h-screen flex-col bg-transparent'>
         <NavBar />
         <Header />
         <About />
         <div className='hidden h-3 border border-opacity-25 m-fit max-w-5xl mx-auto w-full'></div>
         <Inscription />
-
         <AboutDraft />
         <FAQ />
         <Footer />
-      </main>
+        </main>
+        </motion.div>
     </>
   )
 }

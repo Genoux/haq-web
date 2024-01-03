@@ -22,11 +22,11 @@ export default function About() {
               <p className='text-muted-foreground text-xl font-medium'>
                 Format de double élimination place limitée et un prix à gagner!
               </p>
-            <Link target='_blank' href={'https://reglements.tournoishaq.ca'}><Button variant="outline" className='w-fit mt-4' size={"lg"}>Règlements</Button></Link>  
-
+              <div className='w-fit'>
+              <Link target='_blank' href={'https://reglements.tournoishaq.ca'}><Button variant="outline" className='w-fit mt-4' size={"lg"}>Règlements</Button></Link>
+              </div>
             </div>
           </div>
-
         </div>
       </div>
     </>
