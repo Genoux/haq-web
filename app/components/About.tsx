@@ -7,9 +7,8 @@ export default function About() {
     <>
 
 
-      <div className="z-50 bg-black relative w-full overflow-hidden rounded-lg mt-32 mb-40 max-w-5xl mx-auto">
-        <div className='relative z-50 gap-12 px-12 py-12'>
-          <div className='relative z-50'>
+      <div className="z-50 bg-black relative w-full overflow-hidden rounded-lg pb-32 mx-auto">
+        <div className='relative z-50 gap-12 px-12 py-12 max-w-5xl mx-auto'>
             <h1 className="w-full font-normal text-muted-foreground text-base mb-6">
               À propos
             </h1>
@@ -23,7 +22,6 @@ export default function About() {
               <Link target='_blank' href={'https://reglements.tournoishaq.ca'}><Button variant="outline" className='w-fit mt-4' size={"lg"}>Règlements</Button></Link>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </>

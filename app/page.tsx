@@ -25,6 +25,7 @@ export default function Home() {
         <main className='z-50 flex flex-col bg-black'>
           <NavBar />
           <Header />
+          <div className='z-50 bg-gradient-to-t from-black to-transparent  top-0 left-0 h-40 w-full -mt-32'></div>
           <About />
           <Inscription />
           <AboutDraft />
