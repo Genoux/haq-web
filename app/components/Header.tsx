@@ -43,18 +43,16 @@ export default function Header() {
 
   return (
     <>
-      <div className='absolute z-30 w-full'>
+      <div className='absolute z-30 w-full bg-black'>
         <Waves />
       </div>
-      <div
-        className="z-40 theme-zinc">
-        <section className='relative z-10 max-w-[1024px] border-x border-b mx-auto text-center gap-2 py-48 px-6'>
+      <div className="z-40 theme-zinc">
+        <section className='relative z-10 max-w-[1024px] mx-auto text-center gap-2 py-48 px-6'>
           <div className='flex flex-col gap-1 mb-6'>
-            <p className='uppercase text-theme-gradient tracking-tighter font-extrabold text-7xl w-full'>Saison 2</p>
             <div className='flex flex-col gap-2'>
-              <h1 className='text-6xl font-extrabold leading-tight tracking-tighter lg:leading-[1.1]'>Tournois League Of Legend Aram</h1>
-              <p className='max-w-[750px] mx-auto text-lg text-muted-foreground sm:text-xl'>
-                {"ARAM en mode compétitif, enrichi d'un système de draft personnalisé pour une stratégie renouvelée"}
+              <h1 className='text-6xl px-40 font-extrabold leading-tight tracking-tighter lg:leading-[1.1]'>Tournoi HAQ <span className='text-theme-gradient'>Saison 2</span></h1>
+              <p className='max-w-[620px] mx-auto text-lg text-muted-foreground sm:text-lg'>
+                Le mode ARAM de <span className="underline">League of Legends</span> en version compétitive, enrichi d&apos;un système de draft personnalisé pour une stratégie renouvelée.
               </p>
             </div>
           </div>

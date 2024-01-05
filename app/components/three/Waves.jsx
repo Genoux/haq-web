@@ -59,7 +59,7 @@ const Waves = ({ waveSpeed = 0.1, waveFrequency = 24, gridSize = 220, gridSpacin
       vec3 gradientColor = mix(color1, color2, vUv.y);
   
       // Create an opacity gradient based on the vUv.y coordinate
-      float opacityGradient = mix(.005, 0.1, vUv.y); // Change 0.2 and 1.0 to desired min and max opacity values
+      float opacityGradient = mix(.01, 0.12, vUv.y); // Change 0.2 and 1.0 to desired min and max opacity values
       float finalOpacity = fade * opacityGradient;
   
       gl_FragColor = vec4(gradientColor, finalOpacity);
