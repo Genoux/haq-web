@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Inscription() {
   return (
     <>
-      <div className="mx-auto relative z-20 overflow-hidden w-full h-full rounded-md mb-24">
+      <div className="mx-auto relative z-20 overflow-hidden w-full h-full rounded-md">
         <div className="relative flex flex-col py-48 text-center gap-6 justify-center w-full h-full z-50 px-12">
           <div className='flex flex-col gap-2'>
             <h1 className='text-5xl font-bold tracking-tighter'>Incriptions ouvertes</h1>

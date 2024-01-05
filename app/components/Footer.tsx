@@ -6,7 +6,7 @@ import { Facebook, Instagram, Twitch } from 'lucide-react'
 export default function Footer() {
   return (
     <>
-      <div className="max-w-5xl mx-auto flex flex-col items-center gap-6 w-full justify-center pb-24 z-50 relative">
+      <div className="bg-black mx-auto flex flex-col items-center gap-6 w-full justify-center pb-24 z-50 relative">
         <Image width={200} height={100} src="logo.svg" alt="Tournois HAQ" />
 
         <div className='flex'>

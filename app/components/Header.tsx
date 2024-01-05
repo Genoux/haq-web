@@ -30,16 +30,21 @@ export default function Header() {
 
   return (
     <>
+      <div
+        className="fixed top-0 left-0 z-0 w-full h-full" style={{
+          backgroundImage: 'url("/bg.jpg")', // Update the path
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}></div>
       <div className='absolute z-30 w-full'>
-      <div className='z-50 bg-gradient-to-t from-black to-transparent absolute top-0 left-0 h-full w-full'></div>
-
+        <div className='z-50 bg-gradient-to-t from-black to-transparent absolute top-0 left-0 h-full w-full'></div>
         <Waves />
       </div>
-      <div className="z-50">
-        <section className='relative z-10 max-w-[1024px] mx-auto text-center gap-2 pt-56 pb-64 px-6'>
-          <div className='flex flex-col gap-1 mb-6'>
-            <div className='flex flex-col gap-2'>
-              <h1 className='text-5xl lg:text-6xl px-0 lg:px-40 font-extrabold leading-tight tracking-tighter lg:leading-[1.1]'>Tournoi HAQ <span className='text-theme-gradient'>Saison 2</span></h1>
+      <div className="z-30">
+        <section className='relative z-10  mx-auto text-center pt-56 pb-64 px-6'>
+          <div className='flex flex-col gap-1 mb-8'>
+            <div className='flex flex-col gap-3'>
+              <h1 className='text-5xl lg:text-7xl px-0 lg:px-40 font-extrabold leading-tight tracking-tighter lg:leading-[1.1]'>Tournoi HAQ <span className='text-theme-gradient'>Saison 2</span></h1>
               <p className='max-w-[620px] mx-auto text-lg text-muted-foreground sm:text-lg'>
                 Le mode ARAM de <span className="underline">League of Legends</span> en version compétitive, enrichi d&apos;un système de draft personnalisé pour une stratégie renouvelée.
               </p>
