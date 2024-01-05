@@ -4,8 +4,8 @@ import Link from 'next/link'
 export default function Inscription() {
   return (
     <>
-      <div className="max-w-5xl mx-auto relative z-20 overflow-hidden w-full h-full rounded-md mb-24">
-        <div className="relative flex flex-col py-32 text-center gap-6 justify-center w-full h-full z-50 px-12">
+      <div className="mx-auto relative z-20 overflow-hidden w-full h-full rounded-md mb-24">
+        <div className="relative flex flex-col py-48 text-center gap-6 justify-center w-full h-full z-50 px-12">
           <div className='flex flex-col gap-2'>
             <h1 className='text-5xl font-bold tracking-tighter'>Incriptions ouvertes</h1>
             <p className='text-lg text-white text-opacity-80'>Les inscriptions sont maintenant ouvertes! Dépêchez-vous, les places sont limitées.</p>

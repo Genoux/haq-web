@@ -7,7 +7,7 @@ export default function About() {
     <>
 
 
-      <div className="z-40 bg-black relative w-full overflow-hidden rounded-lg mb-24 max-w-5xl mx-auto">
+      <div className="z-50 bg-black relative w-full overflow-hidden rounded-lg mt-32 mb-40 max-w-5xl mx-auto">
         <div className='relative z-50 gap-12 px-12 py-12'>
           <div className='relative z-50'>
             <h1 className="w-full font-normal text-muted-foreground text-base mb-6">

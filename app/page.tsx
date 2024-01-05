@@ -22,7 +22,7 @@ export default function Home() {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.25 }}
       >
-        <main className='z-50 flex min-h-screen flex-col bg-transparent'>
+        <main className='z-50 flex flex-col bg-black'>
           <NavBar />
           <Header />
           <About />

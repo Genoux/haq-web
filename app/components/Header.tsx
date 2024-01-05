@@ -43,11 +43,12 @@ export default function Header() {
 
   return (
     <>
-      <div className='absolute z-30 w-full bg-black'>
+      <div className='z-40 bg-gradient-to-t from-black to-transparent absolute top-0 left-0 h-full w-full'></div>
+      <div className='absolute z-30 w-full'>
         <Waves />
       </div>
-      <div className="z-40 theme-zinc">
-        <section className='relative z-10 max-w-[1024px] mx-auto text-center gap-2 py-48 px-6'>
+      <div className="z-50 theme-zinc">
+        <section className='relative z-10 max-w-[1024px] mx-auto text-center gap-2 py-52 px-6'>
           <div className='flex flex-col gap-1 mb-6'>
             <div className='flex flex-col gap-2'>
               <h1 className='text-6xl px-40 font-extrabold leading-tight tracking-tighter lg:leading-[1.1]'>Tournoi HAQ <span className='text-theme-gradient'>Saison 2</span></h1>
@@ -61,7 +62,7 @@ export default function Header() {
             <Link target='_blank' href={'mailto:contact@tournoishaq.ca'}> <Button variant="outline">Nous contacter</Button></Link>
           </div>
         </section>
-        <div className='z-0 bg-gradient-to-t from-black to-transparent absolute top-0 left-0 h-full w-full'></div>
+       
       </div>
     </>
   )
