@@ -1,62 +1,47 @@
-import Button from '@/app/components/Button'
-import Link from 'next/link'
 import Image from 'next/image'
-import { useRef, useEffect } from 'react'
+import { useEffect, useState } from 'react';
+import { MoveDown } from 'lucide-react';
+import GridAnimation from '@/app/components/GridAnimation';
+import { motion } from 'framer-motion';
 
 export default function AboutDraft() {
-
-  const parallaxRef = useRef<HTMLDivElement>(null);
-  const parallaxRef2 = useRef<HTMLDivElement>(null);
-  const parallaxRef3 = useRef<HTMLDivElement>(null);
+  const [opacity, setOpacity] = useState(0);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
+    const handleScroll = () => {
+      const maxScroll = window.innerHeight;
+      const currentScroll = window.scrollY;
+      const newOpacity = Math.min(1, currentScroll / maxScroll);
 
-      const { clientX: x, clientY: y } = e;
-      const { innerWidth: width, innerHeight: height } = window;
-
-      const xPos = x / width - 0.5;
-      const yPos = y / height - 0.5;
-
-      if (parallaxRef.current) {
-        parallaxRef.current.style.transform = `translate(${xPos * -50.0}px, ${yPos * -50.0}px)`;
-      }
-
-      if (parallaxRef2.current) {
-        parallaxRef2.current.style.transform = `translate(${xPos * -80.0}px, ${yPos * -80.0}px)`;
-      }
-
-      if (parallaxRef3.current) {
-        parallaxRef3.current.style.transform = `translate(${xPos * -70.0}px, ${yPos * -70.0}px)`;
-      }
+      setOpacity(newOpacity);
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
-
   return (
-    <div
-      className="text-center flex flex-col w-full text-white mt-56 mb-0 lg:mb-24 h-screen relative z-20 "
-    >
-      <div className='container mb-6 lg:mb-16'>
-        <h1 className="text-7xl lg:text-8xl">Custom draft pick/ban</h1>
-        <p className="text-3xl px-0 lg:px-12 font-normal mt-6">{'Nous avons développé un système de "pick & ban" personnalisé pour le mode ARAM, où les deux équipes partagent un pool de 30 champions aléatoires !'}</p>
+    <div className='bg-black relative z-20'>
+      <div className="items-center mx-auto bg-black text-center flex flex-col w-full text-white pt-12">
+        <div className='container max-w-5xl justify-center items-center mt-20 mb-12 z-40 flex flex-col gap-4'>
+          <h1 className="text-5xl font-bold tracking-tighter">Custom draft pick/ban</h1>
+          <p className="text-xl font-medium">Nous avons développé un système de <u>pick & ban</u> <span className='text-muted-foreground font-normal'>personnalisé pour le mode ARAM, où les deux équipes partagent un pool de 30 champions aléatoires!</span></p>
+        </div>
       </div>
-      <div
-        ref={parallaxRef}
-        className='mx-auto relative z-40'
-      >
+      <motion.div     style={{ opacity }}
+        transition={{ duration: 0.2 }} className='relative'>
+
         <Image
-          width={1220}  // The original width of your image
+          width={1920}  // The original width of your image
           height={900}  // The original height of your image
-          quality={80}
-          src="/images/demo-draft.png" alt="Aram draft pick" />
-      </div>
+          quality={100}
+          src="/images/draft.png" alt="Aram draft pick" className='z-50 w-full max-w-5xl mx-auto border rounded-sm' />
+        <div className='bg-gradient-to-t from-black via-transparent to-transparent absolute top-0 left-0 h-full w-full'>
+        </div>
+      </motion.div>
     </div>
   );
 }

@@ -1,7 +1,8 @@
-import Button from '@/app/components/Button'
-import { motion } from 'framer-motion'
+import { Button } from '@/app/components/ui/button'
 import { useRef, useEffect } from 'react'
-
+import Waves from './three/Waves'
+import Link from 'next/link'
+import { motion } from 'framer-motion';
 export default function Header() {
   const isNeutral = process.env.NEXT_PUBLIC_NEUTRAL === 'true';
   const parallaxRef = useRef<HTMLDivElement>(null);
@@ -28,32 +29,34 @@ export default function Header() {
   }, []);
 
   return (
-
-    <motion.div
-      ref={parallaxRef}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-      className="flex flex-col items-center justify-center w-full pt-0 mt-0 text-left container z-50 relative" >
-      <div className="flex flex-col items-center justify-center w-full pt-12 sm:pt-24 pb-32 sm:pb-52 mt-0 text-center container">
-        <div className='flex flex-col gap-0 text-7xl md:text-9xl'>
-          {!isNeutral &&
-            <div className='bg-primary py-2 px-12 text-5xl text-secondary mx-auto mb-8 w-fit h-full'>SAISON 1</div>
-          }
-          <h1 className="text-primary font-bold w-full lg:whitespace-nowrap">LEAGUE OF LEGENDS</h1>
-          <h2 className="text-white font-bold w-full">TOURNOI ARAM</h2>
-          {!isNeutral &&
-            <p className='text-4xl md:text-6xl w-full mt-10 mb-6'>28 OCTOBRE - 19H EST</p>
-          }
-        </div>
-        <div className="flex flex-col sm:flex-row gap-4 w-full justify-center mt-6">
-          {!isNeutral &&
-            <Button text="Inscription - Gratuit" url="https://inscription.tournoishaq.ca/" size="lg" />
-          }
-          <Button text="Nous contacter" url="mailto:contact@tournoishaq.ca" variant="bg-white" size="lg" />
-        </div>
+    <>
+      <div
+        className="fixed top-0 left-0 z-0 w-full h-full" style={{
+          backgroundImage: 'url("/bg.jpg")', // Update the path
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}></div>
+      <div className='absolute z-30 w-full'>
+        <div className='z-50 bg-gradient-to-t from-black to-transparent absolute top-0 left-0 h-full w-full'></div>
+        <Waves />
       </div>
-    </motion.div>
+      <div className="z-30">
+        <section className='relative z-10  mx-auto text-center pt-56 pb-64 px-6'>
+          <div className='flex flex-col gap-1 mb-8'>
+            <div className='flex flex-col gap-3'>
+              <h1 className='text-5xl lg:text-7xl px-0 lg:px-40 font-extrabold leading-tight tracking-tighter lg:leading-[1.1]'>Tournoi HAQ <span className='text-theme-gradient'>Saison 2</span></h1>
+              <p className='max-w-[620px] mx-auto text-lg text-muted-foreground sm:text-lg'>
+                Le mode ARAM de <span className="underline">League of Legends</span> en version compétitive, enrichi d&apos;un système de draft personnalisé pour une stratégie renouvelée.
+              </p>
+            </div>
+          </div>
+          <div className='flex gap-4 justify-center'>
+            <Link target='_blank' href={'https://inscription.tournoishaq.ca/'}> <Button variant="default">Inscription</Button></Link>
+            <Link target='_blank' href={'mailto:contact@tournoishaq.ca'}> <Button variant="outline">Nous contacter</Button></Link>
+          </div>
+        </section>
+
+      </div>
+    </>
   )
 }
