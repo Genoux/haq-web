@@ -72,7 +72,7 @@ export default function Header() {
           </div>
         </div>
         <div className='flex gap-4 justify-center'>
-          <Link target='_blank' href={'https://inscription.tournoishaq.ca/'}> <Button className='bg-theme-gradient text-white text-lg font-medium py-6' size={'lg'} variant="default">Inscription - Gratuit</Button></Link>
+          <Link target='_blank' href={'https://inscription.tournoishaq.ca/'}> <Button className='bg-theme-gradient text-white text-lg font-semibold py-6' size={'lg'} variant="default">Inscription - Gratuit</Button></Link>
         </div>
       </motion.div>
     </motion.div>
