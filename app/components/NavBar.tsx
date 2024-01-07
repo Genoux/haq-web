@@ -53,7 +53,7 @@ export default function NavBar() {
 
   return (
     <nav className='sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
-      <div className='container mx-auto px-4 h-14 flex items-center justify-between w-full text-sm'>
+      <div className=' max-w-7xl mx-auto mx-auto px-4 h-14 flex items-center justify-between w-full text-sm'>
 
         {/* Logo and Hamburger Menu Icon */}
         <div className='flex flex-row items-center h-full justify-between w-full sm:w-fit'>

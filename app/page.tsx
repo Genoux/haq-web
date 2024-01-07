@@ -23,13 +23,15 @@ export default function Home() {
         exit={{ opacity: 0 }}
         transition={{ duration: 1.5 }}
       >
-        <main className='flex flex-col bg-black'>
+     
+
+        <main>
           <NavBar />
           <Header />
-         <div className='z-20 bg-gradient-to-t from-black to-transparent  top-0 left-0 h-40 w-full -mt-32'></div>
-          <About />
+            <About />
           <Inscription />
           <AboutDraft />
+          
           <FAQ />
           <Footer />
         </main>
