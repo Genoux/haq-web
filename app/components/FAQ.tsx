@@ -43,7 +43,7 @@ const FAQItem: React.FC<FAQItemProps> = ({
           animate={{ rotate: isOpen ? 0 : 180 }}
           transition={{ duration: 0.2 }}
         >
-          <ChevronDown /> 
+          <ChevronDown />
         </motion.div>
       </div>
       <AnimatePresence>
@@ -97,19 +97,21 @@ export default function FAQ() {
   }, [faqData]);
 
   return (
-    <div className='mx-auto relative z-20 overflow-hidden w-full py-48 bg-black px-6'>
-      <h1 className='text-5xl font-bold tracking-tighter mb-6 w-full justify-center flex'>FAQs</h1>
-      <div className='flex gap-2 flex-col max-w-5xl mx-auto'>
-        {faqData.map((item, index) => (
-          <FAQItem
-            key={index}
-            index={index}
-            question={item.question}
-            answer={item.answer}
-            openItemIndex={openItemIndex}
-            setOpenItemIndex={setOpenItemIndex}
-          />
-        ))}
+    <div className='relative z-40 py-40 w-full bg-black'>
+      <div className='container mx-auto max-w-7xl px-6 flex-grow'>
+        <h1 className='text-5xl font-bold tracking-tighter mb-6 w-full justify-center flex'>FAQs</h1>
+        <div className='flex gap-2 flex-col max-w-5xl mx-auto'>
+          {faqData.map((item, index) => (
+            <FAQItem
+              key={index}
+              index={index}
+              question={item.question}
+              answer={item.answer}
+              openItemIndex={openItemIndex}
+              setOpenItemIndex={setOpenItemIndex}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

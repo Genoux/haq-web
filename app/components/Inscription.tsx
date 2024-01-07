@@ -4,14 +4,14 @@ import Link from 'next/link'
 export default function Inscription() {
   return (
     <>
-      <div className="mx-auto relative z-20 overflow-hidden w-full h-full rounded-md">
+      <div className="mx-auto relative z-40 overflow-hidden w-full h-full rounded-md bg-black">
         <div className="relative flex flex-col py-48 text-center gap-6 justify-center w-full h-full z-50 px-12">
           <div className='flex flex-col gap-2'>
-            <h1 className='text-5xl font-bold tracking-tighter'>Incriptions ouvertes</h1>
-            <p className='text-lg text-white text-opacity-80'>Les inscriptions sont maintenant ouvertes! Dépêchez-vous, les places sont limitées.</p>
+            <h1 className='text-5xl md:text-6xl font-bold tracking-tighter'>Incriptions ouvertes</h1>
+            <p className='text-md md:text-lg text-white text-opacity-80'>Les inscriptions sont maintenant ouvertes! Dépêchez-vous, les places sont limitées.</p>
           </div>
           <div className='w-full'>
-            <Link target='_blank' href={'https://inscription.tournoishaq.ca/'}><Button variant='default'>{"S'inscrire - Gratuit"}</Button></Link>
+            <Link target='_blank' href={'https://inscription.tournoishaq.ca/'}><Button className='text-md font-semibold' size={'lg'} variant='default'>{"S'inscrire - Gratuit"}</Button></Link>
           </div>
         </div>
         <div className='w-full h-full top-0 left-0 absolute opacity-50'>
