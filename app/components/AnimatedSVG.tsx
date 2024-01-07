@@ -33,17 +33,9 @@ export default function AnimatedSVG() {
   // }, [controls]);
 
   return (
-    <div
-      className="w-[450px]"
-      style={{
-        border: "none",
-        padding: "0",
-        marginLeft: "auto",
-        marginRight: "auto"
-      }}
+    <div className="w-full h-full"
     >
       <motion.svg
-        style={{ width: "100%", height: "100%" }}
         viewBox="0 0 614 97"
         xmlns="http://www.w3.org/2000/svg"
       >

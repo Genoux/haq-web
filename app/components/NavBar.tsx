@@ -49,24 +49,26 @@ export default function NavBar() {
 
     // Cleanup function to remove the event listener
     return () => window.removeEventListener('resize', handleResize);
-  }, [isMobileMenuOpen]); // Dependency array ensures effect runs when isMobileMenuOpen changes
+  }, [handleResize, isMobileMenuOpen]); // Dependency array ensures effect runs when isMobileMenuOpen changes
 
   return (
     <nav className='sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
-      <div className=' max-w-7xl mx-auto mx-auto px-4 h-14 flex items-center justify-between w-full text-sm'>
+      <div className='max-w-7xl mx-auto px-4 h-14 flex items-center justify-between w-full text-sm'>
 
         {/* Logo and Hamburger Menu Icon */}
-        <div className='flex flex-row items-center h-full justify-between w-full sm:w-fit'>
+        <div className='flex flex-row items-center h-full justify-between w-full md:w-fit'>
           <Image width={180} height={100} src="/logo.svg" alt="Tournois HAQ" />
-          <button ref={mobileMenuButtonRef} onClick={toggleMobileMenu} className='sm:hidden'>
+          <button ref={mobileMenuButtonRef} onClick={toggleMobileMenu} className='md:hidden'>
             <Menu className='w-6 h-6' />
           </button>
         </div>
 
         {/* Main Links and Social Icons */}
-        <div className='hidden sm:flex items-center gap-2 w-fit justify-end'>
+        <div className='hidden md:flex items-center gap-2 w-fit justify-end'>
+          <div className='flex gap-0'>
           <Link target='_blank' href='https://reglements.tournoishaq.ca' passHref><Button variant="ghost" size={"sm"} className='text-foreground/60'>Règlements</Button></Link>
           <Link target='_blank' href='mailto:contact@tournoishaq.ca' passHref><Button variant="ghost" size={"sm"} className='text-foreground/60'>Nous contacter</Button></Link>
+          </div>
           <Link target='_blank' href='https://inscription.tournoishaq.ca/' passHref><Button variant="default" size={"sm"} className='flex items-center gap-1'>Inscription <ExternalLink className='hidden' size={15} /></Button></Link>
           <div className='flex'>
             <Link href={'https://www.twitch.tv/tournois_haq'} target="_blank"><Twitch className='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9 px-0' /></Link>
@@ -77,7 +79,7 @@ export default function NavBar() {
 
         {/* Mobile Menu */}
         <motion.div
-          className="absolute md:hidden top-12 right-4 rounded-md border bg-background z-50 flex flex-col gap-1 p-3 w-1/2"
+          className="absolute md:hidden top-12 right-4 rounded-md border bg-background z-50 flex flex-col gap-1 p-3 w-60"
           initial="closed"
           animate={isMobileMenuOpen ? "open" : "closed"}
           variants={variants}
