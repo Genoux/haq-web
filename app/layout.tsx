@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { GeistSans } from "geist/font/sans";
 import { ThemeProvider } from "@/app/components/ui/theme-provider";
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   title: 'Tournois HAQ',
@@ -35,6 +36,7 @@ export default function RootLayout({
       <body className={`${GeistSans.className} bg-black`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
