@@ -87,7 +87,7 @@ export default function FAQ() {
     },
     {
       question: "Quel est le format du tournoi?",
-      answer: "Le tournoi se déroulera sous forme de double élimination. Cela signifie qu'il y aura un bracket des gagnants et un bracket des perdants, vous garantissant au minimum deux matchs à jouer."
+      answer: "Le tournoi se jouera en format 'best of 3' avec élimination après une défaite. Chaque compétiteur jouera au moins deux parties."
     }
     // Add more FAQ items as needed
   ], []);
