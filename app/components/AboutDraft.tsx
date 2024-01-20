@@ -33,14 +33,14 @@ export default function AboutDraft() {
             <p className="text-md md:text-xl font-medium">Nous avons développé un système de <u>pick & ban</u> <span className='text-muted-foreground font-normal'>personnalisé pour le mode ARAM, où les deux équipes partagent un pool de 30 champions aléatoires!</span></p>
           </div>
         </div>
-        <motion.div style={{ opacity }}
+        <motion.div
+          style={{ opacity }}
           transition={{ duration: 0.2 }} className='relative'>
-
           <Image
             width={1920}  // The original width of your image
             height={900}  // The original height of your image
             quality={100}
-            src="/images/draft.png" alt="Aram draft pick" className='z-50 w-full max-w-5xl mx-auto border rounded-sm' />
+            src="/images/draft.png" alt="Aram draft pick" className='z-50 w-full max-w-5xl mx-auto border rounded-xl' />
           <div className='bg-gradient-to-t from-black via-transparent to-transparent absolute top-0 left-0 h-full w-full'>
           </div>
         </motion.div>
