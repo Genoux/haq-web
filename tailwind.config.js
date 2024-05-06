@@ -13,13 +13,13 @@ module.exports = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1280px",
       },
     },
     extend: {
       backgroundImage: {
         'theme-gradient': "linear-gradient(85deg, #00C2FF 7.47%, #0038FF 106.04%)",
-        'theme-gradien-50': "linear-gradient(85deg, rgba(0, 194, 255, 0.50) 7.47%, rgba(0, 56, 255, 0.50) 106.04%)",
+        'theme-gradient-50': "linear-gradient(85deg, rgba(45, 1, 137, .5) 0%, rgba(101, 26, 98, .5) 100%)",
       },
       stroke: {
         "theme-gradient": "red"
@@ -30,6 +30,9 @@ module.exports = {
         ring: "hsl(var(--ring))",
         background: "#09090B",
         foreground: "hsl(var(--foreground))",
+        gray: {
+          DEFAULT: "#8F8F8F",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

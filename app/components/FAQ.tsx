@@ -97,9 +97,9 @@ export default function FAQ() {
   }, [faqData]);
 
   return (
-    <div className='relative z-40 py-40 w-full bg-black'>
+    <div className='relative z-40 pb-40 pt-52 w-full bg-black'>
       <div className='container mx-auto max-w-7xl px-6 flex-grow'>
-        <h1 className='text-5xl font-bold tracking-tighter mb-6 w-full justify-center flex'>FAQs</h1>
+        <h1 className='text-5xl font-bold tracking-tighter mb-6 w-full justify-center flex'>FAQ</h1>
         <div className='flex gap-2 flex-col max-w-5xl mx-auto'>
           {faqData.map((item, index) => (
             <FAQItem

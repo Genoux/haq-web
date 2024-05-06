@@ -6,7 +6,7 @@ import { Facebook, Instagram, Twitch } from 'lucide-react'
 export default function Footer() {
   return (
     <>
-      <div className="bg-black z-40 relative py-40">
+      <div className="bg-black z-40 relative pt-40 pb-24 flex flex-col items-center justify-between gap-12">
         <div className='container mx-auto max-w-7xl px-6 flex-grow flex flex-col items-center gap-6 w-full justify-center '>
           <Image width={200} height={100} src="logo.svg" alt="Tournois HAQ" />
 
@@ -28,8 +28,10 @@ export default function Footer() {
               Règlements
             </Link>
           </div>
-        </div>
 
+         
+        </div>
+        <p className='mt-6 text-xs'>Howling Abyss Québec © 2024 Tous droits réservés.</p>
       </div>
     </>
   )

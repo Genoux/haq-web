@@ -7,9 +7,6 @@ import { motion } from 'framer-motion';
 import AnimatedSVG from './AnimatedSVG'
 
 export default function Header() {
-  const isNeutral = process.env.NEXT_PUBLIC_NEUTRAL === 'true';
-  const parallaxRef = useRef<HTMLDivElement>(null);
-
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -28,28 +25,8 @@ export default function Header() {
   }, []);
 
   // Calculate parallax effect (adjust speed as needed)
-  const parallaxShift = scrollY * 0.5;
+  const parallaxShift = scrollY * .7;
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-
-      const { clientX: x, clientY: y } = e;
-      const { innerWidth: width, innerHeight: height } = window;
-
-      const xPos = x / width - 0.5;
-      const yPos = y / height - 0.5;
-
-      if (parallaxRef.current) {
-        parallaxRef.current.style.transform = `translate(${xPos * -20.0}px, ${yPos * -20.0}px)`;
-      }
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
 
   return (
     <motion.div
@@ -59,8 +36,9 @@ export default function Header() {
       className='relative overflow-hidden'
     >
       <div className='z-40 bg-gradient-to-t from-black to-transparent absolute top-0 left-0 h-full w-full'></div>
+      <div className='bg-theme-gradient-50 backdrop-contrast-100 z-30 absolute top-0 left-0 w-full h-full opacity-70'></div>
       <div
-        className="z-30 fixed top-0 left-0 w-full h-full opacity-40" style={{
+        className="z-30 fixed top-0 left-0 w-full h-full opacity-30" style={{
           backgroundImage: 'url("/bg.jpg")', // Update the path
           backgroundSize: 'cover',
           backgroundPosition: 'center'
@@ -77,32 +55,31 @@ export default function Header() {
           autoPlay
           loop
           muted
-          style={{ minHeight: '100vh' }}
+          style={{ minHeight: '100vh'}}
         >
-          <source src="images/animated-zed-odyssey-intro.webm" type="video/mp4" />
+          <source src="images/Jhin.mp4" type="video/mp4" />
         </video>
       </motion.div>
       <motion.div
-        className='relative z-40 container mx-auto max-w-7xl px-6 py-32 flex-grow'>
+        className='relative z-40 container mx-auto max-w-7xl px-4 pt-40 md:pt-64 pb-24 md:pb-52 flex-grow'>
         <div className='flex flex-col gap-1 mb-8'>
-          <div className='flex flex-col items-center md:items-start'>
-            <div className='w-[350px] lg:w-[450px] mr-auto ml-auto md:mr-auto md:ml-0 text-left '>
-              <AnimatedSVG />
+          <div className='flex flex-col items-center md:items-center'>
+            <div className='hidden w-[350px] md:w-[450px] mr-auto ml-auto md:mr-auto md:ml-0 text-left font-black tracking-tighter text-7xl'>
+              SAISON 3
             </div>
-            {/* <div className='hidden text-theme-gradient w-fit rounded text-8xl tracking-tighter font-black uppercase'>Saison 2</div> */}
-            <h1 className='w-full text-center md:text-left text-7xl lg:text-8xl mt-2 px-0 lg:px-0 font-black tracking-tighter'>TOURNOI ARAM<span className='text-theme-gradient hidden'> Saison 2</span></h1>
-            <h2 className='text-4xl font-black w-fit tracking-tight my-4'>20 Janvier - 18H</h2>
-            <p className='max-w-xl text-center md:text-left text-base text-muted-foreground'>
+            <div className=' w-fit text-center rounded text-6xl md:text-8xl tracking-tighter font-black uppercase'>Saison 3</div>
+            <h1 className='w-full text-center md:text-center text-5xl  md:text-7xl  px-0 md:px-0 font-black tracking-tighter'>TOURNOI ARAM</h1>
+            <h2 className='text-4xl font-black w-fit tracking-tight my-4'>1 JUIN - 18h</h2>
+            <p className='max-w-xl text-center md:text-center text-base text-muted-foreground'>
               Le mode ARAM de <span className="underline">League of Legends</span> en version compétitive, enrichi d&apos;un système de draft personnalisé pour une stratégie renouvelée.
             </p>
           </div>
         </div>
-        <div className='flex justify-center md:justify-start gap-4'>
-          <Link target='_blank' href={'https://inscription.tournoishaq.ca/'}> <Button className='bg-theme-gradient text-white text-lg font-semibold py-6' size={'lg'} variant="default">Inscription - Gratuit</Button></Link>
+        <div className='flex justify-center md:justify-center gap-4'>
+          <Link target='_blank' href={'https://inscription.tournoishaq.ca/'}> <Button className='text-lg font-semibold py-6' size={'lg'} variant="default">Inscription - Gratuit</Button></Link>
         </div>
 
-        <div className='mt-20 flex justify-center md:justify-start'>
-          <Image width={180} height={100} src="/images/league.svg" alt="Tournois HAQ" />
+        <div className='hidden mt-20 flex justify-center md:justify-center'>
         </div>
 
       </motion.div>
