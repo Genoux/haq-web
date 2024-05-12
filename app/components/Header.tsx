@@ -69,7 +69,7 @@ export default function Header() {
             </div>
             <div className=' w-fit text-center rounded text-6xl md:text-8xl tracking-tighter font-black uppercase'>Saison 3</div>
             <h1 className='w-full text-center md:text-center text-5xl  md:text-7xl  px-0 md:px-0 font-black tracking-tighter'>TOURNOI ARAM</h1>
-            <h2 className='text-4xl font-black w-fit tracking-tight my-4'>1 JUIN - 18h</h2>
+            <h2 className='text-4xl font-black w-fit tracking-tight my-4'>8 JUIN - 18H</h2>
             <p className='max-w-xl text-center md:text-center text-base text-muted-foreground'>
               Le mode ARAM de <span className="underline">League of Legends</span> en version compétitive, enrichi d&apos;un système de draft personnalisé pour une stratégie renouvelée.
             </p>

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Button } from "@/app/components/ui/button";
 import { Facebook, Instagram, Twitch, ExternalLink, Menu } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { LogoText } from 'haq-assets';
 
 export default function NavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State to control the visibility of the mobile menu
@@ -69,15 +70,13 @@ export default function NavBar() {
     <nav className={`fixed top-0 z-50 w-full ${isScrolled ? 'border-b border-border/40' : ''} bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60`}>
       <div className='container mx-auto px-4 h-14 flex items-center justify-between w-full text-sm'>
 
-        {/* Logo and Hamburger Menu Icon */}
         <div className='flex flex-row items-center h-full justify-between w-full md:w-fit'>
-          <Image width={180} height={100} src="/logo.svg" alt="Tournois HAQ" />
+          <LogoText size={180} />
           <button ref={mobileMenuButtonRef} onClick={toggleMobileMenu} className='md:hidden'>
             <Menu className='w-6 h-6' />
           </button>
         </div>
 
-        {/* Main Links and Social Icons */}
         <div className='hidden md:flex items-center gap-2 w-fit justify-end'>
           <div className='flex gap-0'>
           <Link target='_blank' href='https://reglements.tournoishaq.ca' passHref><Button variant="ghost" size={"sm"} className='text-foreground/60'>Règlements</Button></Link>
