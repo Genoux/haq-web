@@ -2,10 +2,10 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -18,11 +18,13 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'theme-gradient': "linear-gradient(85deg, #00C2FF 7.47%, #0038FF 106.04%)",
-        'theme-gradient-50': "linear-gradient(85deg, rgba(45, 1, 137, .5) 0%, rgba(101, 26, 98, .5) 100%)",
+        "theme-gradient":
+          "linear-gradient(85deg, #00C2FF 7.47%, #0038FF 106.04%)",
+        "theme-gradient-50":
+          "linear-gradient(85deg, rgba(45, 1, 137, .5) 0%, rgba(101, 26, 98, .5) 100%)",
       },
       stroke: {
-        "theme-gradient": "red"
+        "theme-gradient": "red",
       },
       colors: {
         border: "hsl(var(--border))",
@@ -83,19 +85,21 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"),
-  
-  function({ addUtilities }) {
-    const newUtilities = {
-      '.text-theme-gradient': {
-        backgroundImage: "linear-gradient(85deg, #00C2FF 7.47%, #0038FF 106.04%)",
-        backgroundClip: 'text',
-        textFillColor: 'transparent',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-      },
-    };
-    addUtilities(newUtilities, ['responsive', 'hover']);
-  }
+  plugins: [
+    require("tailwindcss-animate"),
+
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".text-theme-gradient": {
+          backgroundImage:
+            "linear-gradient(85deg, #00C2FF 7.47%, #0038FF 106.04%)",
+          backgroundClip: "text",
+          textFillColor: "transparent",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        },
+      };
+      addUtilities(newUtilities, ["responsive", "hover"]);
+    },
   ],
-}
+};

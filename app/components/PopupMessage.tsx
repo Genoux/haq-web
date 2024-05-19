@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 import {
   Dialog,
@@ -11,12 +11,13 @@ import {
 
 type PopupMessageProps = {
   display?: boolean;
-  onClose: () => void;  // Function to call when the popup is closed
+  onClose: () => void; // Function to call when the popup is closed
 };
 
 export default function PopupMessage({ display, onClose }: PopupMessageProps) {
   const [open, setOpen] = useState(false);
-  const banner = 'https://sdedknsmucuwsvgfxrxs.supabase.co/storage/v1/object/public/Assets/sCurrent.png';
+  const banner =
+    "https://sdedknsmucuwsvgfxrxs.supabase.co/storage/v1/object/public/Assets/sCurrent.png";
 
   useEffect(() => {
     setOpen(display as boolean);
@@ -26,23 +27,26 @@ export default function PopupMessage({ display, onClose }: PopupMessageProps) {
     const timer = setTimeout(() => {
       setOpen(true);
     }, 3000);
-    return () => clearTimeout(timer);  // Clean up the timeout
+    return () => clearTimeout(timer); // Clean up the timeout
   }, []);
 
   const handleClose = () => {
     setOpen(false);
-    onClose();  // Notify parent component that the popup has been closed
+    onClose(); // Notify parent component that the popup has been closed
   };
 
   return (
-    <Dialog open={open} onOpenChange={(newOpen: boolean) => {
+    <Dialog
+      open={open}
+      onOpenChange={(newOpen: boolean) => {
         if (!newOpen) handleClose(); // Call handleClose only if the dialog is being closed
-      }}>
+      }}
+    >
       <DialogContent>
         <DialogTitle>Bienvenue à la saison 3!</DialogTitle>
         <DialogHeader>
           <DialogDescription>
-            <Image width={600} height={800} src={banner} alt='Saison 3' />
+            <Image width={600} height={800} src={banner} alt="Saison 3" />
           </DialogDescription>
         </DialogHeader>
       </DialogContent>

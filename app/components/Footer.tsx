@@ -1,39 +1,65 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import clsx from 'clsx';
-import { Facebook, Instagram, Twitch } from 'lucide-react'
-import { LogoText } from 'haq-assets'
+import Image from "next/image";
+import Link from "next/link";
+import clsx from "clsx";
+import { Facebook, Instagram, Twitch } from "lucide-react";
+import { LogoText } from "haq-assets";
 
 export default function Footer() {
   return (
     <>
       <div className="bg-black z-40 relative pt-40 pb-24 flex flex-col items-center justify-between gap-12">
-        <div className='container mx-auto max-w-7xl px-6 flex-grow flex flex-col items-center gap-6 w-full justify-center '>
+        <div className="container mx-auto max-w-7xl px-6 flex-grow flex flex-col items-center gap-6 w-full justify-center ">
           <LogoText size={225} />
 
-          <div className='flex'>
-            <Link href={'https://www.twitch.tv/tournois_haq'} target="_blank"><Twitch className='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9 px-0' /></Link>
-            <Link href={'https://www.facebook.com/profile.php?id=100093560062096'} target="_blank"><Facebook className='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9 px-0' /></Link>
-            <Link href={'https://www.instagram.com/tournois_haq/'} target="_blank"><Instagram className='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9 px-0' /></Link>
+          <div className="flex">
+            <Link href={"https://www.twitch.tv/tournois_haq"} target="_blank">
+              <Twitch className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9 px-0" />
+            </Link>
+            <Link
+              href={"https://www.facebook.com/profile.php?id=100093560062096"}
+              target="_blank"
+            >
+              <Facebook className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9 px-0" />
+            </Link>
+            <Link
+              href={"https://www.instagram.com/tournois_haq/"}
+              target="_blank"
+            >
+              <Instagram className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9 px-0" />
+            </Link>
           </div>
-          <div className={clsx(
-            'flex flex-col items-center sm:flex-row gap-6 text-sm font-base'
-          )}>
-            <Link target="_blank" href="https://inscription.tournoishaq.ca/privacy-policy" className='cursor-pointer transition-all hover:opacity-50'>
+          <div
+            className={clsx(
+              "flex flex-col items-center sm:flex-row gap-6 text-sm font-base",
+            )}
+          >
+            <Link
+              target="_blank"
+              href="https://inscription.tournoishaq.ca/privacy-policy"
+              className="cursor-pointer transition-all hover:opacity-50"
+            >
               Politique de confidentialité
             </Link>
-            <Link target="_blank" href="https://inscription.tournoishaq.ca/terms-and-conditions" className='cursor-pointer transition-all hover:opacity-50'>
+            <Link
+              target="_blank"
+              href="https://inscription.tournoishaq.ca/terms-and-conditions"
+              className="cursor-pointer transition-all hover:opacity-50"
+            >
               Termes et conditions
             </Link>
-            <Link target="_blank" href="https://reglements.tournoishaq.ca" className='cursor-pointer transition-all hover:opacity-50'>
+            <Link
+              target="_blank"
+              href="https://reglements.tournoishaq.ca"
+              className="cursor-pointer transition-all hover:opacity-50"
+            >
               Règlements
             </Link>
           </div>
-
-         
         </div>
-        <p className='mt-6 text-xs'>Howling Abyss Québec © 2024 Tous droits réservés.</p>
+        <p className="mt-6 text-xs">
+          Howling Abyss Québec © 2024 Tous droits réservés.
+        </p>
       </div>
     </>
-  )
+  );
 }

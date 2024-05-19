@@ -1,9 +1,16 @@
-import React, { useEffect, useRef } from 'react';
-import * as THREE from 'three';
-import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer';
-import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
+import React, { useEffect, useRef } from "react";
+import * as THREE from "three";
+import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer";
+import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
 
-const ThreeDWaveGrid = ({ waveSpeed = 0.02, waveFrequency = 25, gridSize = 100, gridSpacing = 2, minColor = 0xffffff, maxColor = 0x000000 }) => {
+const ThreeDWaveGrid = ({
+  waveSpeed = 0.02,
+  waveFrequency = 25,
+  gridSize = 100,
+  gridSpacing = 2,
+  minColor = 0xffffff,
+  maxColor = 0x000000,
+}) => {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -15,7 +22,7 @@ const ThreeDWaveGrid = ({ waveSpeed = 0.02, waveFrequency = 25, gridSize = 100, 
     if (width === 0 || height === 0) {
       width = window.innerWidth;
       height = window.innerHeight;
-      console.log('Default dimensions set for container');
+      console.log("Default dimensions set for container");
     }
 
     console.log(`Container dimensions: width = ${width}, height = ${height}`);
@@ -39,7 +46,12 @@ const ThreeDWaveGrid = ({ waveSpeed = 0.02, waveFrequency = 25, gridSize = 100, 
     composer.addPass(renderPass);
 
     // Grid
-    const geometry = new THREE.PlaneGeometry(gridSize, gridSize, gridSize / gridSpacing, gridSize / gridSpacing);
+    const geometry = new THREE.PlaneGeometry(
+      gridSize,
+      gridSize,
+      gridSize / gridSpacing,
+      gridSize / gridSpacing,
+    );
     const material = new THREE.ShaderMaterial({
       uniforms: {
         color1: { value: new THREE.Color(minColor) },
@@ -78,7 +90,7 @@ const ThreeDWaveGrid = ({ waveSpeed = 0.02, waveFrequency = 25, gridSize = 100, 
       renderer.setSize(newWidth, newHeight);
       composer.setSize(newWidth, newHeight);
     };
-    window.addEventListener('resize', onWindowResize);
+    window.addEventListener("resize", onWindowResize);
 
     // Animation loop
     const animate = () => {
@@ -87,8 +99,12 @@ const ThreeDWaveGrid = ({ waveSpeed = 0.02, waveFrequency = 25, gridSize = 100, 
       for (let i = 0; i < positionAttribute.count; i++) {
         const x = positionAttribute.getX(i);
         const y = positionAttribute.getY(i);
-        const waveX = Math.sin((x * waveFrequency + performance.now() * waveSpeed) / gridSize);
-        const waveY = Math.sin((y * waveFrequency + performance.now() * waveSpeed) / gridSize);
+        const waveX = Math.sin(
+          (x * waveFrequency + performance.now() * waveSpeed) / gridSize,
+        );
+        const waveY = Math.sin(
+          (y * waveFrequency + performance.now() * waveSpeed) / gridSize,
+        );
         const z = (waveX + waveY) * 3;
         positionAttribute.setZ(i, z);
       }
@@ -99,13 +115,15 @@ const ThreeDWaveGrid = ({ waveSpeed = 0.02, waveFrequency = 25, gridSize = 100, 
 
     // Clean up on unmount
     return () => {
-      window.removeEventListener('resize', onWindowResize);
+      window.removeEventListener("resize", onWindowResize);
       container.removeChild(renderer.domElement);
       renderer.dispose();
     };
   }, [waveSpeed, waveFrequency, gridSize, gridSpacing]);
 
-  return <div ref={containerRef} className="fixed z-0 top-0 left-0 w-full h-full" />;
+  return (
+    <div ref={containerRef} className="fixed z-0 top-0 left-0 w-full h-full" />
+  );
 };
 
 export default ThreeDWaveGrid;
