@@ -36,7 +36,7 @@ export default function Header() {
       <div
         className="z-30 fixed top-0 left-0 w-full h-full opacity-30"
         style={{
-          backgroundImage: 'url("/bg.jpg")', // Update the path
+          backgroundImage: 'url("/images/bg.jpg")', // Update the path
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
