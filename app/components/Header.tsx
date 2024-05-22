@@ -1,8 +1,25 @@
 import { Button } from "@/app/components/ui/button";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Header() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    // Function to update the scroll position
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup function
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   // Calculate parallax effect (adjust speed as needed)
   const parallaxShift = scrollY * 0.7;
@@ -32,24 +49,25 @@ export default function Header() {
         className="h-full"
       >
         <video
-          className="z-20 absolute top-0 left-0 w-full object-cover h-screen"
+          className="z-20 absolute top-0 left-0 w-full h-full object-cover"
           autoPlay
           loop
           muted
+          style={{ minHeight: "100vh" }}
         >
           <source src="images/jhin.mp4" type="video/mp4" />
         </video>
       </motion.div>
-      <motion.div className="relative z-40 container mx-auto max-w-7xl px-4 pt-40 pb-0 md:pt-56 md:pb-52 flex-grow">
+      <motion.div className="relative z-40 container mx-auto max-w-7xl px-4 pt-40 pb-0 md:pt-52 md:pb-52 flex-grow">
         <div className="flex flex-col gap-1 mb-8">
           <div className="flex flex-col items-center md:items-start">
             <div className=" w-fit text-center rounded text-6xl md:text-8xl tracking-tighter font-black uppercase">
               Saison 3
             </div>
-            <h1 className="w-full text-center md:text-start text-5xl  md:text-8xl  px-0 md:px-0 font-black tracking-tighter">
+            <h1 className="w-full text-center md:text-start text-5xl md:text-8xl px-0 md:px-0 font-black tracking-tighter">
               TOURNOI ARAM
             </h1>
-            <h2 className="text-5xl text-center md:text-start font-black w-fit tracking-tight my-4">
+            <h2 className="text-6xl text-center md:text-start font-black w-fit tracking-tight my-4">
               15 JUIN - 18H
             </h2>
             <p className="max-w-xl text-center md:text-start text-base text-muted-foreground">
