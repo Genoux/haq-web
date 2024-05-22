@@ -6,11 +6,11 @@ import Image from "next/image";
 export default function About() {
   return (
     <>
-      <div className="z-40 bg-black relative overflow-hidden pt-40 pb-96">
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-24 lg:gap-40">
+      <div className="z-40 bg-black relative overflow-hidden pt-40 pb-40 md:pb-96">
+        <div className="container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12 md:gap-24 lg:gap-40">
           <div>
             <Image
-              className="border rounded w-64  md:w-96 lg:w-full lg:h-auto"
+              className="border rounded w-60 md:w-96 lg:w-full lg:h-auto"
               width={400}
               height={400}
               src="/images/league.svg"

@@ -1,35 +1,16 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export default function AboutDraft() {
-  const [opacity, setOpacity] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const maxScroll = window.innerHeight;
-      const currentScroll = window.scrollY;
-      const newOpacity = Math.min(1, currentScroll / maxScroll);
-
-      setOpacity(newOpacity);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
-    <div className="bg-black relative z-40 w-full pt-16">
-      <div className=" container mx-auto max-w-7xl px-6 flex-grow">
+    <div className="bg-black relative z-40 w-full pt-6 md:pt-16">
+      <div className=" container mx-auto max-w-7xl flex-grow">
         <div className="items-center mx-auto bg-black text-center flex flex-col w-full text-white">
-          <div className="container max-w-5xl justify-center items-center mt-20 mb-12 z-40 flex flex-col gap-4">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tighter">
-              Custom draft pick/ban
+          <div className=" max-w-5xl justify-center items-center mt-20 mb-12 z-40 flex flex-col gap-4">
+            <h1 className="text-5xl font-bold tracking-tighter">
+              Nouveau format de draft
             </h1>
-            <p className="text-md md:text-xl font-medium">
+            <p className="text-md md:text-xl font-medium container">
               Nous avons développé un système de <u>pick & ban</u>{" "}
               <span className="text-muted-foreground font-normal">
                 personnalisé pour le mode ARAM, où les deux équipes partagent un
@@ -39,7 +20,8 @@ export default function AboutDraft() {
           </div>
         </div>
         <motion.div
-          style={{ opacity }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.2 }}
           className="relative"
         >
