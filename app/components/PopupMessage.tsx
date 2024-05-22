@@ -16,8 +16,6 @@ type PopupMessageProps = {
 
 export default function PopupMessage({ display, onClose }: PopupMessageProps) {
   const [open, setOpen] = useState(false);
-  const banner =
-    "https://sdedknsmucuwsvgfxrxs.supabase.co/storage/v1/object/public/Assets/sCurrent.png";
 
   useEffect(() => {
     setOpen(display as boolean);
@@ -46,7 +44,7 @@ export default function PopupMessage({ display, onClose }: PopupMessageProps) {
         <DialogTitle>Bienvenue à la saison 3!</DialogTitle>
         <DialogHeader>
           <DialogDescription>
-            <Image width={600} height={800} src={banner} alt="Saison 3" />
+            <Image width={600} height={800} src="/images/sCurrent.png" alt="Saison 3" priority />
           </DialogDescription>
         </DialogHeader>
       </DialogContent>

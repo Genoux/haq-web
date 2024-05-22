@@ -71,7 +71,7 @@ export default function Header() {
               15 JUIN - 18H
             </h2>
             <p className="max-w-xl text-center md:text-start text-base text-muted-foreground">
-              Le mode ARAM de{" "}
+              Le mode ARAM de
               <span className="underline">League of Legends</span> en version
               compétitive, enrichi d&apos;un système de draft personnalisé pour
               une stratégie renouvelée.
