@@ -25,7 +25,7 @@ export default function PopupMessage({ display, onClose }: PopupMessageProps) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setOpen(true);
-    }, 3000);
+    }, 4000);
     return () => clearTimeout(timer); // Clean up the timeout
   }, []);
 

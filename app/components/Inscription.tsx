@@ -4,8 +4,9 @@ import Link from "next/link";
 export default function Inscription() {
   return (
     <>
-      <div className="mx-auto relative z-40 overflow-hidden w-full h-full rounded-md bg-black">
-        <div className="relative flex flex-col py-48 text-center gap-6 justify-center w-full h-full z-50 px-12">
+      <div className="mx-auto max-w-7xl rounded-xl z-40 overflow-hidden flex items-center justify-center w-full bg-black px-4">
+        <div className="h-fit w-full relative rounded overflow-hidden">
+        <div className="relative flex flex-col py-48 text-center gap-6 justify-center w-full z-50 px-12">
           <div className="flex flex-col gap-2">
             <h1 className="text-5xl md:text-6xl font-bold tracking-tighter">
               Incriptions ouvertes
@@ -38,6 +39,7 @@ export default function Inscription() {
           >
             <source src="images/akali.webm" type="video/mp4" />
           </video>
+        </div>
         </div>
       </div>
     </>

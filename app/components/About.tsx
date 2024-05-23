@@ -2,21 +2,27 @@ import clsx from "clsx";
 import { Button } from "@/app/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { BorderBeam } from "@/app/components/magicui/border-beam";
+import TextReveal from "@/app/components/magicui/text-reveal";
 
 export default function About() {
   return (
     <>
-      <div className="z-40 bg-black relative overflow-hidden pt-40 pb-40 md:pb-96">
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12 md:gap-24 lg:gap-40">
+
+      <div className="flex items-center">
+        <div className="px-4 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12 md:gap-24 lg:gap-32">
           <div className="hidden sm:block">
-            <Image
-              className="border rounded w-60 md:w-96 lg:w-full lg:h-auto"
+            <div className="relative w-60  lg:w-full lg:h-auto rounded">
+              <BorderBeam colorFrom="#fff" colorTo="#1E1E1E" size={500}  />
+              <Image
+              className="border rounded w-60  lg:w-full lg:h-auto"
               width={400}
               height={400}
               src="/images/league.svg"
               alt="Tournois HAQ"
               priority={false}
             />
+            </div>
           </div>
           <div>
             <h1 className="w-full font-normal text-muted-foreground text-sm mb-6">
@@ -32,7 +38,7 @@ export default function About() {
                 </span>
               </p>
               <p className="text-muted-foreground text-base font-normal tracking-wide">
-                Format de double élimination place limitée et un prix à gagner!
+                Format de simple élimination (BO3), place limitée et un prix à gagner!
               </p>
               <div className="w-fit">
                 <Link

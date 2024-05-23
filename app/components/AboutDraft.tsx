@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { BorderBeam } from "@/app/components/magicui/border-beam";
 
 export default function AboutDraft() {
   return (
-    <div className="bg-black relative z-40 w-full pt-6 md:pt-16">
-      <div className=" container mx-auto max-w-7xl flex-grow">
+    <div className="bg-black relative z-40 w-full items-center ">
+      <div className=" px-4 mx-auto max-w-7xl flex flex-col gap-12">
         <div className="items-center mx-auto bg-black text-center flex flex-col w-full text-white">
-          <div className=" max-w-5xl justify-center items-center mt-20 mb-12 z-40 flex flex-col gap-4">
+          <div className=" max-w-5xl justify-center items-center z-40 flex flex-col gap-4">
             <h1 className="text-5xl font-bold tracking-tighter">
               Nouveau format de draft
             </h1>
@@ -25,14 +26,17 @@ export default function AboutDraft() {
           transition={{ duration: 0.2 }}
           className="relative"
         >
-          <Image
-            width={1920} // The original width of your image
-            height={900} // The original height of your image
-            quality={100}
-            src="/images/draft.png"
-            alt="Aram draft pick"
-            className="z-50 w-full max-w-5xl mx-auto border rounded-xl"
-          />
+          <div className="relative rounded-xl max-w-7xl overflow-hidden mx-auto">
+            <BorderBeam colorFrom="#fff" colorTo="#1E1E1E" size={500} />
+            <Image
+              width={1920} // The original width of your image
+              height={900} // The original height of your image
+              quality={100}
+              src="/images/draft.png"
+              alt="Aram draft pick"
+              className="z-50 w-full mx-auto border rounded-xl"
+            />
+          </div>
           <div className="bg-gradient-to-t from-black via-transparent to-transparent absolute top-0 left-0 h-full w-full"></div>
         </motion.div>
       </div>

@@ -2,8 +2,9 @@
 
 import NavBar from "@/app/components/NavBar";
 import About from "@/app/components/About";
+import About2 from "@/app/components/About2";
 import Inscription from "@/app/components/Inscription";
-import { motion } from "framer-motion";
+import { motion, useViewportScroll, useTransform } from "framer-motion";
 import FAQ from "@/app/components/FAQ";
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
@@ -46,13 +47,12 @@ export default function Home() {
             </div>
           </div>
         )}
-        <main>
+        <main className="flex flex-col gap-40 md:gap-56">
           <NavBar />
           <Header />
           <About />
           <Inscription />
           <AboutDraft />
-
           <FAQ />
           <Footer />
         </main>
