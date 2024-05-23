@@ -49,13 +49,12 @@ export default function Header() {
         className="h-full"
       >
         <video
-          className="z-20 absolute top-0 left-0 w-full h-full object-cover"
+          className="z-20 absolute top-0 left-0 w-full h-screen object-cover"
           autoPlay
           loop
           muted
-          style={{ minHeight: "100vh" }}
         >
-          <source src="images/jhin.mp4" type="video/mp4" />
+          <source src="images/jhin.webm" type="video/mp4" />
         </video>
       </motion.div>
       <motion.div className="relative z-40 container mx-auto max-w-7xl px-4 pt-40 pb-0 md:pt-52 md:pb-52 flex-grow">
