@@ -86,7 +86,7 @@ export default function FAQ() {
       },
       {
         question: "Quels niveaux de classement peuvent participer au tournoi?",
-        answer: "Tous les niveaux de classement peuvent participer!",
+        answer: "Tous les niveaux de classement peuvent participer !",
       },
       {
         question: "Quel est le format du tournoi?",
@@ -103,9 +103,9 @@ export default function FAQ() {
   }, [faqData]);
 
   return (
-    <div className="relative z-40 pb-40 pt-52 w-full bg-black">
+
       <div className="container mx-auto max-w-7xl px-6 flex-grow">
-        <h1 className="text-5xl font-bold tracking-tighter mb-6 w-full justify-center flex">
+        <h1 className="text-6xl font-bold tracking-tighter mb-6 w-full justify-center flex">
           FAQ
         </h1>
         <div className="flex gap-2 flex-col max-w-5xl mx-auto">
@@ -121,6 +121,6 @@ export default function FAQ() {
           ))}
         </div>
       </div>
-    </div>
+
   );
 }
