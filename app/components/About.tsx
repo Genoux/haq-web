@@ -8,7 +8,7 @@ export default function About() {
     <>
       <div className="z-40 bg-black relative overflow-hidden pt-40 pb-40 md:pb-96">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12 md:gap-24 lg:gap-40">
-          <div>
+          <div className="hidden sm:block">
             <Image
               className="border rounded w-60 md:w-96 lg:w-full lg:h-auto"
               width={400}

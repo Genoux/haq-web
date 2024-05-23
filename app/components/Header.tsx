@@ -57,19 +57,19 @@ export default function Header() {
           <source src="images/jhin.webm" type="video/mp4" />
         </video>
       </motion.div>
-      <motion.div className="relative z-40 container mx-auto max-w-7xl px-4 pt-40 pb-0 md:pt-52 md:pb-52 flex-grow">
+      <motion.div className="relative z-40 container mx-auto max-w-7xl px-12 lg:px-4 pt-40 sm:pt-52 pb-0 sm:pb-40 flex-col">
         <div className="flex flex-col gap-1 mb-8">
-          <div className="flex flex-col items-center md:items-start">
-            <div className=" w-fit text-center rounded text-6xl md:text-8xl tracking-tighter font-black uppercase">
+          <div className="flex flex-col items-center lg:items-start">
+            <div className=" w-fit text-center rounded text-6xl sm:text-8xl tracking-tighter font-black uppercase">
               Saison 3
             </div>
-            <h1 className="w-full text-center md:text-start text-5xl md:text-8xl px-0 md:px-0 font-black tracking-tighter">
+            <h1 className="w-full text-center lg:text-start text-5xl sm:text-7xl lg:text-8xl px-0 md:px-0 font-black tracking-tighter">
               TOURNOI ARAM
             </h1>
-            <h2 className="text-6xl text-center md:text-start font-black w-fit tracking-tight my-4">
+            <h2 className="text-5xl sm:text-6xl text-center lg:text-start font-black w-fit tracking-tight my-4">
               15 JUIN - 18H
             </h2>
-            <p className="max-w-xl text-center md:text-start text-base text-muted-foreground">
+            <p className="max-w-xl text-center lg:text-start text-base text-muted-foreground">
               Le mode ARAM de
               <span className="underline">League of Legends</span> en version
               compétitive, enrichi d&apos;un système de draft personnalisé pour
@@ -77,7 +77,7 @@ export default function Header() {
             </p>
           </div>
         </div>
-        <div className="flex justify-center md:justify-start gap-4">
+        <div className="flex justify-center lg:justify-start gap-4">
           <Link target="_blank" href={"https://inscription.tournoishaq.ca/"}>
             <Button
               className="text-lg font-semibold py-6"
