@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/app/components/ui/theme-provider";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://tournoishaq.ca"),
   title: "Tournois HAQ",
   description: "HAQ - Tournois ARAM League of Legend",
   icons: {
