@@ -2,9 +2,8 @@
 
 import NavBar from "@/app/components/NavBar";
 import About from "@/app/components/About";
-import About2 from "@/app/components/About2";
 import Inscription from "@/app/components/Inscription";
-import { motion, useViewportScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import FAQ from "@/app/components/FAQ";
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
