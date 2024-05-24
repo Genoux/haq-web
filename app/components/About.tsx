@@ -38,7 +38,7 @@ export default function About() {
                 </span>
               </p>
               <p className="text-muted-foreground text-base font-normal tracking-wide">
-                Format de simple élimination (BO3), place limitée et un prix à gagner!
+                Format de simple élimination (BO3), places limitées et un prix à gagner!
               </p>
               <div className="w-fit">
                 <Link
