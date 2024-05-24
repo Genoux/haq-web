@@ -9,7 +9,7 @@ export default function Inscription() {
         <div className="relative flex flex-col py-48 text-center gap-6 justify-center w-full z-50 px-12">
           <div className="flex flex-col gap-2">
             <h1 className="text-5xl md:text-6xl font-bold tracking-tighter">
-              Incriptions ouvertes
+              Inscriptions ouvertes
             </h1>
             <p className="text-md md:text-lg text-white text-opacity-80">
               Les inscriptions sont maintenant ouvertes! Dépêchez-vous, les
@@ -23,7 +23,7 @@ export default function Inscription() {
                 size={"lg"}
                 variant="default"
               >
-                {"S'inscrire - Gratuit"}
+                {"Inscription - Gratuite"}
               </Button>
             </Link>
           </div>

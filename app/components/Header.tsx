@@ -87,7 +87,7 @@ export default function Header() {
               size={"lg"}
               variant="default"
             >
-              Inscription - Gratuit
+              Inscription - Gratuite
             </Button>
           </Link>
         </div>

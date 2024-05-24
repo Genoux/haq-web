@@ -132,7 +132,7 @@ export default function NavBar() {
               size={"sm"}
               className="flex items-center gap-1"
             >
-              Inscription <ExternalLink className="hidden" size={15} />
+              Inscription
             </Button>
           </Link>
         </div>
