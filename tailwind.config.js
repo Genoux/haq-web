@@ -2,10 +2,10 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -13,16 +13,18 @@ module.exports = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1280px",
       },
     },
     extend: {
       backgroundImage: {
-        'theme-gradient': "linear-gradient(85deg, #00C2FF 7.47%, #0038FF 106.04%)",
-        'theme-gradien-50': "linear-gradient(85deg, rgba(0, 194, 255, 0.50) 7.47%, rgba(0, 56, 255, 0.50) 106.04%)",
+        "theme-gradient":
+          "linear-gradient(85deg, #00C2FF 7.47%, #0038FF 106.04%)",
+        "theme-gradient-50":
+          "linear-gradient(85deg, rgba(45, 1, 137, .5) 0%, rgba(101, 26, 98, .5) 100%)",
       },
       stroke: {
-        "theme-gradient": "red"
+        "theme-gradient": "red",
       },
       colors: {
         border: "hsl(var(--border))",
@@ -30,6 +32,9 @@ module.exports = {
         ring: "hsl(var(--ring))",
         background: "#09090B",
         foreground: "hsl(var(--foreground))",
+        gray: {
+          DEFAULT: "#8F8F8F",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -65,6 +70,15 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        grid: {
+          "0%": { transform: "translateY(-50%)" },
+          "100%": { transform: "translateY(0)" },
+        },
+        "border-beam": {
+          "100%": {
+            "offset-distance": "100%",
+          },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -75,24 +89,28 @@ module.exports = {
         },
       },
       animation: {
+        grid: "grid 15s linear infinite",
+        "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
-  plugins: [require("tailwindcss-animate"),
-  
-  function({ addUtilities }) {
-    const newUtilities = {
-      '.text-theme-gradient': {
-        backgroundImage: "linear-gradient(85deg, #00C2FF 7.47%, #0038FF 106.04%)",
-        backgroundClip: 'text',
-        textFillColor: 'transparent',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-      },
-    };
-    addUtilities(newUtilities, ['responsive', 'hover']);
-  }
+  plugins: [
+    require("tailwindcss-animate"),
+
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".text-theme-gradient": {
+          backgroundImage:
+            "linear-gradient(85deg, #00C2FF 7.47%, #0038FF 106.04%)",
+          backgroundClip: "text",
+          textFillColor: "transparent",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        },
+      };
+      addUtilities(newUtilities, ["responsive", "hover"]);
+    },
   ],
-}
+};
