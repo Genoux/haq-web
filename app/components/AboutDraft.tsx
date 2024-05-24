@@ -32,6 +32,8 @@ export default function AboutDraft() {
               width={1920} 
               height={900}
               quality={100}
+              priority={true}
+              loading="eager"
               src="/images/draft.webp"
               alt="Aram draft pick"
               className="z-50 w-full mx-auto border rounded-xl"

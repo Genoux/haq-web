@@ -76,6 +76,7 @@ export default function PopupMessage({ display, onClose }: PopupMessageProps) {
               src="/images/s3banner.webp"
               alt="Saison3"
               priority={true}
+              loading="eager"
               onLoadingComplete={() => setLoading(false)}
             />
           </DialogDescription>
