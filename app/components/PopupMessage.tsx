@@ -16,6 +16,7 @@ type PopupMessageProps = {
 
 export default function PopupMessage({ display, onClose }: PopupMessageProps) {
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setOpen(display as boolean);
@@ -44,7 +45,7 @@ export default function PopupMessage({ display, onClose }: PopupMessageProps) {
         <DialogTitle>Bienvenue à la saison 3!</DialogTitle>
         <DialogHeader>
           <DialogDescription className="relative overflow-hidden">
-            {/* {loading && (
+            {loading && (
               <div className="absolute top-0 left-0 h-full z-90 w-full flex items-center justify-center gap-2">
                 <svg
                   className="animate-spin opacity-20 h-3"
@@ -58,13 +59,15 @@ export default function PopupMessage({ display, onClose }: PopupMessageProps) {
                   />
                 </svg>
               </div>
-            )} */}
+            )}
             <Image
               width={600}
               height={800}
-              quality={70}
               src="/images/sCurrent.webp"
               alt="Saison 3"
+              onLoadingComplete={() => {
+                setLoading(false);
+              }}
             />
           </DialogDescription>
         </DialogHeader>
