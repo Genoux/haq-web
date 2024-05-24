@@ -72,7 +72,6 @@ export default function PopupMessage({ display, onClose }: PopupMessageProps) {
             <Image
               width={632}
               height={842}
-              quality={80}
               src="/images/s3banner.webp"
               alt="Saison3"
               priority={true}
