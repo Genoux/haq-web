@@ -70,10 +70,12 @@ export default function PopupMessage({ display, onClose }: PopupMessageProps) {
               </div>
             )}
             <Image
-              width={600}
-              height={800}
-              src="/images/sCurrent.webp"
-              alt="Saison 3"
+              width={632}
+              height={842}
+              quality={80}
+              src="/images/s3banner.webp"
+              alt="Saison3"
+              priority={true}
               onLoadingComplete={() => setLoading(false)}
             />
           </DialogDescription>

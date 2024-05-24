@@ -9,22 +9,31 @@ export default function About() {
   return (
     <>
 
-      <div className="flex items-center">
+      <div className="flex items-center h-full">
+
         <div className="px-4 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12 md:gap-24 lg:gap-32">
-          <div className="hidden sm:block">
+          <div className="hidden sm:block relative z-40">
             <div className="relative w-60  lg:w-full lg:h-auto rounded">
-              <BorderBeam colorFrom="#fff" colorTo="#1E1E1E" size={500}  />
               <Image
-              className="border rounded w-60  lg:w-full lg:h-auto"
-              width={400}
-              height={400}
-              src="/images/league.svg"
-              alt="Tournois HAQ"
-              priority={false}
-            />
+                className="z-40 absolute top-0 left-0 w-full h-full opacity-20"
+                objectFit="cover"
+                layout="fill"
+                src="/images/bg.webp"
+                alt="Background Fog"
+                priority={false}
+              />
+              <BorderBeam colorFrom="#fff" colorTo="#1E1E1E" size={500} />
+              <Image
+                className="border rounded w-60  lg:w-full lg:h-auto"
+                width={400}
+                height={400}
+                src="/images/league.svg"
+                alt="Tournois HAQ"
+                priority={false}
+              />
             </div>
           </div>
-          <div>
+          <div className="relative z-90">
             <h1 className="w-full font-normal text-muted-foreground text-sm mb-6">
               À PROPOS
             </h1>
