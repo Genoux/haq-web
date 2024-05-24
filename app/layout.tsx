@@ -3,8 +3,10 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { ThemeProvider } from "@/app/components/ui/theme-provider";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://tournoishaq.ca"),
   title: "Tournois HAQ",
   description: "HAQ - Tournois ARAM League of Legend",
   icons: {
@@ -32,6 +34,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
           <Analytics />
+          <SpeedInsights/>
         </ThemeProvider>
       </body>
     </html>

@@ -21,10 +21,9 @@ export default function Home() {
     setShowPopup(!showPopup);
   };
 
-  // This function is called when the popup is closed
   const handlePopupClose = () => {
-    setButtonVisible(true); // Make the button visible after the popup is initially closed
-    setShowPopup(false); // Ensure the popup is marked as closed
+    setButtonVisible(true);
+    setShowPopup(false);
   };
 
   return (
@@ -46,7 +45,7 @@ export default function Home() {
             </div>
           </div>
         )}
-        <main className="flex flex-col gap-40 md:gap-60">
+        <main className="bg-black flex flex-col gap-40 md:gap-60">
           <NavBar />
           <Header />
           <About />

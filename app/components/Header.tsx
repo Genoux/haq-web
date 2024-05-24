@@ -33,14 +33,6 @@ export default function Header() {
     >
       <div className="z-40 bg-gradient-to-t from-black to-transparent absolute top-0 left-0 h-full w-full"></div>
       <div className="bg-theme-gradient-50 backdrop-contrast-100 z-30 absolute top-0 left-0 w-full h-full opacity-70"></div>
-      <div
-        className="hidden z-10 fixed top-0 left-0 w-full h-full opacity-30"
-        style={{
-          backgroundImage: 'url("/images/bg.webp")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      ></div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.6 }}

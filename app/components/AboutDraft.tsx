@@ -26,12 +26,13 @@ export default function AboutDraft() {
           transition={{ duration: 0.2 }}
           className="relative"
         >
-          <div className="relative rounded-xl max-w-7xl overflow-hidden mx-auto">
+          <div className="relative rounded-xl max-w-6xl overflow-hidden mx-auto">
             <BorderBeam colorFrom="#fff" colorTo="#1E1E1E" size={500} />
             <Image
-              width={1920} // The original width of your image
-              height={900} // The original height of your image
-              quality={100}
+              width={1920} 
+              height={900}
+              priority={true}
+              loading="eager"
               src="/images/draft.webp"
               alt="Aram draft pick"
               className="z-50 w-full mx-auto border rounded-xl"

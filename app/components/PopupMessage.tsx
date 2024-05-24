@@ -11,7 +11,7 @@ import {
 
 type PopupMessageProps = {
   display?: boolean;
-  onClose: () => void; // Function to call when the popup is closed
+  onClose: () => void;
 };
 
 export default function PopupMessage({ display, onClose }: PopupMessageProps) {
@@ -26,19 +26,19 @@ export default function PopupMessage({ display, onClose }: PopupMessageProps) {
     const timer = setTimeout(() => {
       setOpen(true);
     }, 4000);
-    return () => clearTimeout(timer); // Clean up the timeout
+    return () => clearTimeout(timer);
   }, []);
 
   const handleClose = () => {
     setOpen(false);
-    onClose(); // Notify parent component that the popup has been closed
+    onClose();
   };
 
   return (
     <Dialog
       open={open}
       onOpenChange={(newOpen: boolean) => {
-        if (!newOpen) handleClose(); // Call handleClose only if the dialog is being closed
+        if (!newOpen) handleClose();
       }}
     >
       <DialogContent>
@@ -61,13 +61,13 @@ export default function PopupMessage({ display, onClose }: PopupMessageProps) {
               </div>
             )}
             <Image
-              width={600}
-              height={800}
-              src="/images/sCurrent.webp"
-              alt="Saison 3"
-              onLoadingComplete={() => {
-                setLoading(false);
-              }}
+              width={632}
+              height={842}
+              src="/images/s3banner.webp"
+              alt="Saison3"
+              priority={true}
+              loading="eager"
+              onLoadingComplete={() => setLoading(false)}
             />
           </DialogDescription>
         </DialogHeader>
