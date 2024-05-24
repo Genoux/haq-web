@@ -104,7 +104,7 @@ export default function FAQ() {
 
   return (
 
-      <div className="container mx-auto max-w-7xl px-6 flex-grow">
+      <div className="container mx-auto max-w-7xl px-6 flex-grow relative z-0">
         <h1 className="text-6xl font-bold tracking-tighter mb-6 w-full justify-center flex">
           FAQ
         </h1>
