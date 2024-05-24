@@ -36,7 +36,7 @@ export default function Header() {
       <div
         className="hidden z-10 fixed top-0 left-0 w-full h-full opacity-30"
         style={{
-          backgroundImage: 'url("/images/bg.jpg")', // Update the path
+          backgroundImage: 'url("/images/bg.webp")',
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -54,7 +54,7 @@ export default function Header() {
           loop
           muted
         >
-          <source src="images/jhin.webm" type="video/mp4" />
+          <source src="images/jhin.webm" type="video/webm" />
         </video>
       </motion.div>
       <motion.div

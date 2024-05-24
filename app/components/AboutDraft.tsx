@@ -32,7 +32,7 @@ export default function AboutDraft() {
               width={1920} // The original width of your image
               height={900} // The original height of your image
               quality={100}
-              src="/images/draft.png"
+              src="/images/draft.webp"
               alt="Aram draft pick"
               className="z-50 w-full mx-auto border rounded-xl"
             />
