@@ -31,7 +31,6 @@ export default function AboutDraft() {
             <Image
               width={1920} 
               height={900}
-              quality={100}
               priority={true}
               loading="eager"
               src="/images/draft.webp"

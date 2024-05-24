@@ -29,18 +29,9 @@ export default function PopupMessage({ display, onClose }: PopupMessageProps) {
     return () => clearTimeout(timer); // Clean up the timeout
   }, []);
 
-  useEffect(() => {
-    // Preload the image
-    const img = new window.Image();
-    img.src = "/images/sCurrent.webp";
-    img.onload = () => {
-      setLoading(false);
-    };
-  }, []);
-
   const handleClose = () => {
     setOpen(false);
-    onClose(); // Notify parent component that the popup has been closed
+    onClose();
   };
 
   return (
@@ -72,7 +63,7 @@ export default function PopupMessage({ display, onClose }: PopupMessageProps) {
             <Image
               width={632}
               height={842}
-              src="/images/s3banner.webp"
+              src="https://sdedknsmucuwsvgfxrxs.supabase.co/storage/v1/object/public/Assets/sCurrent.png"
               alt="Saison3"
               priority={true}
               loading="eager"
