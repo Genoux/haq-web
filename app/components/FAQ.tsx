@@ -91,7 +91,7 @@ export default function FAQ() {
       {
         question: "Quel est le format du tournoi?",
         answer:
-          "Le tournoi se jouera en format 'best of 3' avec élimination après une défaite. Chaque compétiteur jouera au moins deux parties.",
+          "Le tournoi se jouera en format 'best of 3' avec élimination après une défaite. Chaque équipes jouera au moins deux parties.",
       },
       // Add more FAQ items as needed
     ],

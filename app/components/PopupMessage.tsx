@@ -64,7 +64,7 @@ export default function PopupMessage({ display, onClose }: PopupMessageProps) {
               width={600}
               height={800}
               quality={70}
-              src="/images/sCurrent.png"
+              src="/images/sCurrent.webp"
               alt="Saison 3"
               priority
               loading="eager"

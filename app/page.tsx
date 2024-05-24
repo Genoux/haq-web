@@ -47,7 +47,7 @@ export default function Home() {
             </div>
           </div>
         )}
-        <main className="flex flex-col gap-40 md:gap-56">
+        <main className="flex flex-col gap-40 md:gap-60">
           <NavBar />
           <Header />
           <About />
