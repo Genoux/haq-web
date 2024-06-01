@@ -40,21 +40,16 @@ export default function Inscription() {
             </Link>
           </div>
         </div>
-        <div className="w-full h-full top-0 left-0 absolute">
-            <Image
-              objectFit="cover"
-              layout="fill"
-              src="/images/akali.webp"
-              alt="Background Fog"
-              className="z-20 absolute top-0 left-0 w-full h-screen object-cover opacity-100"
-          />
+          <div className="w-full h-full top-0 left-0 absolute">
+          <div className="z-40 bg-gradient-to-t from-black to-transparent absolute top-0 left-0 h-full w-full opacity-10"></div>
+          <div className="bg-theme-gradient-50 z-40 absolute top-0 left-0 w-full h-full opacity-60"></div>
             <video
-            className="hidden z-20 absolute top-0 left-0 w-full h-full object-cover opacity-50"
+            className="z-20 absolute top-0 left-0 w-full h-full object-cover opacity-50"
             autoPlay
             loop
             muted
           >
-            <source src="images/akali.webm" type="video/webm" />
+            <source src="images/akali(3).webm" type="video/webm" />
           </video>
         </div>
         </div>
