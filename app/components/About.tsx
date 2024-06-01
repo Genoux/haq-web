@@ -9,19 +9,10 @@ export default function About() {
   return (
     <>
 
-      <div className="flex items-center h-full">
-
+      <div className="flex items-center h-full -mt-24">
         <div className="px-4 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12 md:gap-24 lg:gap-32">
           <div className="hidden sm:block relative z-40">
-            <div className="relative w-60  lg:w-full lg:h-auto rounded">
-              <Image
-                className="z-40 absolute top-0 left-0 w-full h-full opacity-20"
-                objectFit="cover"
-                layout="fill"
-                src="/images/bg.webp"
-                alt="Background Fog"
-                priority={false}
-              />
+            <div className="relative w-60 lg:w-full lg:h-auto rounded">
               <BorderBeam colorFrom="#fff" colorTo="#1E1E1E" size={500} />
               <Image
                 className="border rounded w-60  lg:w-full lg:h-auto"
@@ -47,7 +38,7 @@ export default function About() {
                 </span>
               </p>
               <p className="text-muted-foreground text-base font-normal tracking-wide">
-                Format de simple élimination (BO3), places limitées et un prix à gagner!
+                Format de simple élimination (BO3), places limitées et 200$ à gagner!
               </p>
               <div className="w-fit">
                 <Link

@@ -41,7 +41,7 @@ export default function PopupMessage({ display, onClose }: PopupMessageProps) {
         if (!newOpen) handleClose();
       }}
     >
-      <DialogContent>
+      <DialogContent className="max-w-md">
         <DialogTitle>Bienvenue à la saison 3!</DialogTitle>
         <DialogHeader>
           <DialogDescription className="relative overflow-hidden">
@@ -66,6 +66,7 @@ export default function PopupMessage({ display, onClose }: PopupMessageProps) {
               src="/images/s3banner.webp"
               alt="Saison3"
               priority={true}
+              quality={80}
               loading="eager"
               onLoadingComplete={() => setLoading(false)}
             />

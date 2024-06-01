@@ -26,7 +26,7 @@ export default function AboutDraft() {
           transition={{ duration: 0.2 }}
           className="relative"
         >
-          <div className="relative rounded-xl max-w-6xl overflow-hidden mx-auto">
+          <div className="relative rounded-xl max-w-5xl overflow-hidden mx-auto">
             <BorderBeam colorFrom="#fff" colorTo="#1E1E1E" size={500} />
             <Image
               width={1920} 

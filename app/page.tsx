@@ -28,13 +28,13 @@ export default function Home() {
 
   return (
     <>
+      <PopupMessage display={showPopup} onClose={handlePopupClose} />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 1.5 }}
       >
-        <PopupMessage display={showPopup} onClose={handlePopupClose} />
         {buttonVisible && (
           <div
             className="fixed bottom-0 right-0 z-50 p-4 cursor-pointer hover:translate-y-1 transition-all duration-150"
@@ -45,7 +45,7 @@ export default function Home() {
             </div>
           </div>
         )}
-        <main className="bg-black flex flex-col gap-40 md:gap-60">
+        <main className="bg-black flex flex-col gap-32 md:gap-60">
           <NavBar />
           <Header />
           <About />

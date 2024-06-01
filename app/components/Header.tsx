@@ -28,15 +28,15 @@ export default function Header() {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.3 }}
       className="relative overflow-hidden"
     >
-      <div className="z-40 bg-gradient-to-t from-black to-transparent absolute top-0 left-0 h-full w-full"></div>
-      <div className="bg-theme-gradient-50 backdrop-contrast-100 z-30 absolute top-0 left-0 w-full h-full opacity-70"></div>
+      <div className="z-40 bg-gradient-to-t from-black via-transparent to-transparent absolute top-0 left-0 h-full w-full"></div>
+      <div className="bg-theme-gradient-50 backdrop-contrast-100 z-30 absolute top-0 left-0 w-full h-full opacity-80"></div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.6 }}
-        transition={{ duration: 2 }}
+        transition={{ duration: 0.5}}
         style={{ transform: `translateY(${parallaxShift}px)` }}
         className="h-full"
       >
@@ -52,11 +52,11 @@ export default function Header() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 2, delay: 1 }}
-        className="relative z-40 container h-screen mx-auto max-w-7xl px-12 lg:px-4 justify-center flex pb-0  flex-col">
+        transition={{ duration: 0.3}}
+        className="relative z-40 container h-screen mx-auto max-w-7xl px-0 lg:px-4 justify-center flex pb-0 flex-col">
         <div className="flex flex-col gap-1 mb-8">
           <div className="flex flex-col items-center lg:items-center">
-            <div className=" w-fit text-center rounded text-7xl sm:text-8xl tracking-tighter font-black uppercase">
+            <div className=" w-fit text-center rounded text-6xl sm:text-8xl tracking-tighter font-black uppercase">
               Saison 3
             </div>
             <h1 className="w-full text-center lg:text-center text-5xl sm:text-7xl lg:text-8xl px-0 md:px-0 font-black tracking-tighter">

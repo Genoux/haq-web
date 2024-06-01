@@ -12,15 +12,15 @@ export default function NavBar() {
     open: {
       display: "flex",
       opacity: 1,
-      top: 50,
-      transition: { duration: 0.1 },
+      top: 56,
+      transition: { duration: 0.1},
       ease: [0.585, 0.535, 0.23, 0.85],
     },
     closed: {
       display: "none",
       opacity: 0,
-      top: 60,
-      transition: { duration: 0.25 },
+      top: 50,
+      transition: { duration: 0.15 },
       ease: [0.585, 0.535, 0.23, 0.85],
     },
   };
@@ -139,7 +139,7 @@ export default function NavBar() {
 
         {/* Mobile Menu */}
         <motion.div
-          className="absolute md:hidden top-12 right-4 rounded-md border bg-background z-50 flex flex-col gap-1 p-3 w-60"
+          className="absolute w-full md:hidden top-0 right-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50 flex flex-col gap-1 p-3"
           initial="closed"
           animate={isMobileMenuOpen ? "open" : "closed"}
           variants={variants}
@@ -173,23 +173,6 @@ export default function NavBar() {
               Inscription <ExternalLink className="hidden" size={15} />
             </Button>
           </Link>
-          <div className="flex justify-center pt-4">
-            <Link href={"https://www.twitch.tv/tournois_haq"} target="_blank">
-              <Twitch className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9 px-0" />
-            </Link>
-            <Link
-              href={"https://www.facebook.com/profile.php?id=100093560062096"}
-              target="_blank"
-            >
-              <Facebook className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9 px-0" />
-            </Link>
-            <Link
-              href={"https://www.instagram.com/tournois_haq/"}
-              target="_blank"
-            >
-              <Instagram className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9 px-0" />
-            </Link>
-          </div>
         </motion.div>
       </div>
     </nav>
