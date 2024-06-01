@@ -1,10 +1,21 @@
 import { Button } from "@/app/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function Inscription() {
+  const ref = useRef(null)
+  const isInView = useInView(ref)
+
   return (
-    <>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: isInView ? 1 : 0 }}
+      transition={{ duration: 0.3 }}
+      className="z-0"
+    >
       <div className="mx-auto max-w-7xl rounded-xl z-40 overflow-hidden flex items-center justify-center w-full bg-black px-4">
         <div className="h-fit w-full relative rounded overflow-hidden">
         <div className="relative flex flex-col py-48 text-center gap-6 justify-center w-full z-50 px-4 sm:px-12">
@@ -33,8 +44,7 @@ export default function Inscription() {
             <Image
               objectFit="cover"
               layout="fill"
-              quality={100}
-              src="/images/akali-static.png"
+              src="/images/akali.webp"
               alt="Background Fog"
               className="z-20 absolute top-0 left-0 w-full h-screen object-cover opacity-100"
           />
@@ -49,6 +59,6 @@ export default function Inscription() {
         </div>
         </div>
       </div>
-    </>
+    </motion.div>
   );
 }
