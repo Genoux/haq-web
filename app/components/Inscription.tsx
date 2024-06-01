@@ -49,7 +49,7 @@ export default function Inscription() {
             loop
             muted
           >
-            <source src="images/akali(3).webm" type="video/webm" />
+            <source src="images/akali.webm" type="video/webm" />
           </video>
         </div>
         </div>
