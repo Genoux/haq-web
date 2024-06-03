@@ -27,6 +27,7 @@ export default function Home() {
 
   return (
     <main>
+      <PopupMessage display={showPopup} onClose={handlePopupClose} />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
