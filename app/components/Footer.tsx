@@ -9,16 +9,20 @@ export default function Footer() {
       <div className="flex flex-col gap-6 justify-center items-center pb-24">
         <Logo size={70} className="mb-12" />
         <div className="flex">
-          <Link href={"https://www.twitch.tv/tournois_haq"} target="_blank">
+          <Link
+            aria-label="Twitch"
+            href={"https://www.twitch.tv/tournois_haq"} target="_blank">
             <Twitch className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9 px-0" />
           </Link>
           <Link
+            aria-label="Facebook"
             href={"https://www.facebook.com/profile.php?id=100093560062096"}
             target="_blank"
           >
             <Facebook className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-9 px-0" />
           </Link>
           <Link
+            aria-label="Instagram"
             href={"https://www.instagram.com/tournois_haq/"}
             target="_blank"
           >
@@ -31,6 +35,7 @@ export default function Footer() {
           )}
         >
           <Link
+            aria-label="Politique de confidentialité"
             target="_blank"
             href="https://inscription.tournoishaq.ca/privacy-policy"
             className="cursor-pointer transition-all hover:opacity-50"
@@ -38,6 +43,7 @@ export default function Footer() {
             Politique de confidentialité
           </Link>
           <Link
+            aria-label="Termes et conditions"
             target="_blank"
             href="https://inscription.tournoishaq.ca/terms-and-conditions"
             className="cursor-pointer transition-all hover:opacity-50"
@@ -45,6 +51,7 @@ export default function Footer() {
             Termes et conditions
           </Link>
           <Link
+            aria-label="Règlements"
             target="_blank"
             href="https://reglements.tournoishaq.ca"
             className="cursor-pointer transition-all hover:opacity-50"
