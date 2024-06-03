@@ -9,6 +9,8 @@ import {
   DialogTitle,
 } from "@/app/components/ui/dialog";
 
+import s3Banner from "@/public/images/s3banner.webp";
+
 type PopupMessageProps = {
   display?: boolean;
   onClose: () => void;
@@ -61,14 +63,17 @@ export default function PopupMessage({ display, onClose }: PopupMessageProps) {
               </div>
             )}
             <Image
-              width={632}
-              height={842}
-              src="/images/s3banner.webp"
+              sizes="100vw"
+              style={{
+                width: "100%",
+                height: "auto",
+              }}
+              src={s3Banner}
               alt="Saison3"
-              priority={true}
+              priority
+              placeholder="blur"
               quality={80}
-              loading="eager"
-              onLoadingComplete={() => setLoading(false)}
+              onLoad={() => setLoading(false)}
             />
           </DialogDescription>
         </DialogHeader>
