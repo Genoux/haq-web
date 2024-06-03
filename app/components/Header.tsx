@@ -1,43 +1,33 @@
 import { Button } from "@/app/components/ui/button";
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    // Function to update the scroll position
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
 
-    // Add scroll event listener
     window.addEventListener("scroll", handleScroll);
 
-    // Cleanup function
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  // Calculate parallax effect (adjust speed as needed)
   const parallaxShift = scrollY * 0.7;
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-      className="relative overflow-hidden"
-    >
+    <div className="relative overflow-hidden">
       <div className="z-40 bg-gradient-to-t from-black via-transparent to-transparent absolute top-0 left-0 h-full w-full"></div>
       <div className="bg-theme-gradient-50 backdrop-contrast-100 z-30 absolute top-0 left-0 w-full h-full opacity-80"></div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.5 }}
         style={{ transform: `translateY(${parallaxShift}px)` }}
         className="h-full"
       >
@@ -50,11 +40,7 @@ export default function Header() {
           <source src="images/jhin.webm" type="video/webm" />
         </video>
       </motion.div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5}}
-        className="relative z-40 container h-screen mx-auto px-0 lg:px-4 justify-center flex pb-0 flex-col">
+      <div className="relative z-40 container h-screen mx-auto px-0 lg:px-4 justify-center flex pb-0 flex-col">
         <div className="flex flex-col gap-1 mb-8">
           <div className="flex flex-col items-center lg:items-center">
             <div className=" w-fit text-center rounded text-6xl sm:text-8xl tracking-tighter font-black uppercase">
@@ -67,9 +53,9 @@ export default function Header() {
               15 JUIN - 18H
             </h2>
             <p className="max-w-xl text-center lg:text-center text-base text-muted-foreground">
-              Le mode ARAM de League of Legends en version
-              compétitive, enrichi d&apos;un système de draft personnalisé pour
-              une stratégie renouvelée.
+              Le mode ARAM de League of Legends en version compétitive, enrichi
+              d&apos;un système de draft personnalisé pour une stratégie
+              renouvelée.
             </p>
           </div>
         </div>
@@ -84,7 +70,7 @@ export default function Header() {
             </Button>
           </Link>
         </div>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 }

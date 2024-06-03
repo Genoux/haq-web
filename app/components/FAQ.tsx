@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useMemo } from "react";
-import { ChevronUp, ChevronDown } from "lucide-react";
-import clsx from "clsx";
+import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+import clsx from "clsx";
 
 type FAQItemProps = {
   question: string;
@@ -38,7 +38,7 @@ const FAQItem: React.FC<FAQItemProps> = ({
       )}
     >
       <div className="flex justify-between items-center">
-        <h3 className="text-lg font-semibold text-white">{question}</h3>
+        <h1 className="text-lg font-semibold text-white">{question}</h1>
         <motion.div
           animate={{ rotate: isOpen ? 0 : 180 }}
           transition={{ duration: 0.2 }}
@@ -103,24 +103,22 @@ export default function FAQ() {
   }, [faqData]);
 
   return (
-
-      <div className="container mx-auto max-w-7xl px-6 flex-grow relative z-0">
-        <h1 className="text-6xl font-bold tracking-tighter mb-6 w-full justify-center flex">
-          FAQ
-        </h1>
-        <div className="flex gap-2 flex-col max-w-5xl mx-auto">
-          {faqData.map((item, index) => (
-            <FAQItem
-              key={index}
-              index={index}
-              question={item.question}
-              answer={item.answer}
-              openItemIndex={openItemIndex}
-              setOpenItemIndex={setOpenItemIndex}
-            />
-          ))}
-        </div>
+    <div className="container mx-auto max-w-7xl px-6 flex-grow relative z-0">
+      <h1 className="text-6xl font-bold tracking-tighter mb-6 w-full justify-center flex">
+        FAQ
+      </h1>
+      <div className="flex gap-2 flex-col max-w-5xl mx-auto">
+        {faqData.map((item, index) => (
+          <FAQItem
+            key={index}
+            index={index}
+            question={item.question}
+            answer={item.answer}
+            openItemIndex={openItemIndex}
+            setOpenItemIndex={setOpenItemIndex}
+          />
+        ))}
       </div>
-
+    </div>
   );
 }

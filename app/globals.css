@@ -57,11 +57,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-/* styles/glitch.css */
-.glitch-text {
-  position: relative;
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-}

@@ -16,7 +16,6 @@ export default function Home() {
   const [showPopup, setShowPopup] = useState(false);
   const [buttonVisible, setButtonVisible] = useState(false);
 
-  // Handles the button click to toggle popup visibility
   const handlePopupToggle = () => {
     setShowPopup(!showPopup);
   };
@@ -27,25 +26,23 @@ export default function Home() {
   };
 
   return (
-    <>
+    <main>
       <PopupMessage display={showPopup} onClose={handlePopupClose} />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 1.5 }}
+        transition={{ duration: 0.2 }}
       >
         {buttonVisible && (
           <div
             className="fixed bottom-0 right-0 z-50 p-4 cursor-pointer hover:translate-y-1 transition-all duration-150"
             onClick={handlePopupToggle}
           >
-            <div className="bg-white p-2 rounded">
-              <Newspaper size={18} className=" text-black" />
-            </div>
+              <Newspaper size={28} className=" text-black bg-white p-1.5 rounded" />
           </div>
         )}
-        <main className="bg-black flex flex-col gap-32 md:gap-60">
+        <div className="bg-black flex flex-col gap-32 md:gap-60">
           <NavBar />
           <Header />
           <About />
@@ -53,8 +50,8 @@ export default function Home() {
           <AboutDraft />
           <FAQ />
           <Footer />
-        </main>
+        </div>
       </motion.div>
-    </>
+    </main>
   );
 }

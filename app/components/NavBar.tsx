@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/app/components/ui/button";
-import { Facebook, Instagram, Twitch, ExternalLink, Menu } from "lucide-react";
+import { ExternalLink, Menu } from "lucide-react";
 import { motion } from "framer-motion";
 import { LogoText } from "haq-assets";
 
@@ -13,7 +12,7 @@ export default function NavBar() {
       display: "flex",
       opacity: 1,
       top: 56,
-      transition: { duration: 0.1},
+      transition: { duration: 0.1 },
       ease: [0.585, 0.535, 0.23, 0.85],
     },
     closed: {
