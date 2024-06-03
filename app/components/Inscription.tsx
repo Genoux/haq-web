@@ -2,6 +2,9 @@ import { Button } from "@/app/components/ui/button";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import akali from "@/public/images/akali.webp";
+import Image from "next/image";
+import gangplank from "@/public/images/gangplank.webp";
 
 export default function Inscription() {
   const ref = useRef(null);
@@ -17,7 +20,7 @@ export default function Inscription() {
     >
       <div className="mx-auto max-w-7xl rounded-xl z-40 overflow-hidden flex items-center justify-center w-full bg-black px-4">
         <div className="h-fit w-full relative rounded overflow-hidden">
-          <div className="relative flex flex-col py-48 text-center gap-6 justify-center w-full z-50 px-4 sm:px-12">
+          <div className="relative flex flex-col py-32 text-center gap-6 justify-center w-full z-50 px-4 sm:px-12">
             <div className="flex flex-col gap-2">
               <h1 className="text-5xl md:text-6xl font-bold tracking-tighter">
                 Inscriptions ouvertes
@@ -43,16 +46,16 @@ export default function Inscription() {
             </div>
           </div>
           <div className="w-full h-full top-0 left-0 absolute">
-            <div className="z-40 bg-gradient-to-t from-black to-transparent absolute top-0 left-0 h-full w-full opacity-10"></div>
-            <div className="bg-theme-gradient-50 z-40 absolute top-0 left-0 w-full h-full opacity-60"></div>
-            <video
-              className="z-20 absolute top-0 left-0 w-full h-full object-cover opacity-50"
-              autoPlay
-              loop
-              muted
-            >
-              <source src="images/akali.webm" type="video/webm" />
-            </video>
+            <div className="bg-theme-gradient-50 z-40 absolute top-0 left-0 w-full h-full"></div>
+            <Image
+              src={gangplank}
+              alt="Register Image"
+              placeholder="blur"
+              className="z-20 absolute top-0 left-0 w-full h-full object-cover opacity-70"
+              style={{
+                objectPosition: "0% 25%",
+              }}
+            />
           </div>
         </div>
       </div>

@@ -106,7 +106,7 @@ export default function NavBar() {
               <Button
                 variant="ghost"
                 size={"sm"}
-                className="text-foreground/60"
+                className="text-foreground/60 hover:bg-transparent"
               >
                 Règlements
               </Button>
@@ -115,7 +115,7 @@ export default function NavBar() {
               <Button
                 variant="ghost"
                 size={"sm"}
-                className="text-foreground/60"
+                className="text-foreground/60 hover:bg-transparent"
               >
                 Nous contacter
               </Button>

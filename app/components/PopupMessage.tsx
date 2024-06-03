@@ -46,7 +46,7 @@ export default function PopupMessage({ display, onClose }: PopupMessageProps) {
       <DialogContent className="max-w-md">
         <DialogTitle>Bienvenue à la saison 3!</DialogTitle>
         <DialogHeader>
-          <DialogDescription className="relative overflow-hidden">
+          <DialogDescription className="relative overflow-hidden rounded-md">
             {loading && (
               <div className="absolute top-0 left-0 h-full z-90 w-full flex items-center justify-center gap-2">
                 <svg
