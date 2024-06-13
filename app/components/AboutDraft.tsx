@@ -29,8 +29,10 @@ export default function AboutDraft() {
           <div className="relative rounded-xl max-w-5xl overflow-hidden mx-auto">
             <BorderBeam colorFrom="#fff" colorTo="#1E1E1E" size={500} />
             <Image
-              width={800}
-              height={500}
+              width={1024}
+              height={680}
+              priority
+              quality={100}
               src="/images/draft.webp"
               alt="Aram draft pick"
               className="z-50 w-full mx-auto border rounded-xl"
