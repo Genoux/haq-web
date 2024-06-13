@@ -38,6 +38,7 @@ export default function Header() {
           src={jax}
           alt="Header Image"
           placeholder="blur"
+          quality={80}
           className="z-20 opacity-80 absolute top-0 left-0 w-full h-screen object-cover"
         />
       </motion.div>

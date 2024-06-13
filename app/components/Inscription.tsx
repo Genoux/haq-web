@@ -2,7 +2,6 @@ import { Button } from "@/app/components/ui/button";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import akali from "@/public/images/akali.webp";
 import Image from "next/image";
 import gangplank from "@/public/images/gangplank.webp";
 
